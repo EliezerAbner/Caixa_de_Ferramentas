@@ -5,10 +5,12 @@
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             x:Class="AppCaixaFerramentas.MainPage"
             NavigationPage.HasNavigationBar="False"
-            BarBackground="#1E3040"
+            BarBackground="#023E73"
             SelectedTabColor="#F24535"
             UnselectedTabColor="White"
             android:TabbedPage.ToolbarPlacement="Bottom">
+    
+    
     <pages:PageHome Title="Home" IconImageSource="home_icon"/>
     <pages:PageVericacao Title="Verificar" IconImageSource="magnifying_icon"/>
     <pages:PageListaFerramentas Title="Minha Caixa" IconImageSource="toolbox_icon"/>

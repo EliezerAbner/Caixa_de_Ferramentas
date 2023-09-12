@@ -49,6 +49,31 @@ namespace AppCaixaFerramentas.Controllers
             }
         }
 
+        public Mensagem MensagemDoDia()
+        {
+            try
+            {
+                string sql = "SELECT * FROM agendamento WHERE id=MAX(id)";
+                Mensagem msg = new Mensagem();
+
+                MySqlConnection con = new MySqlConnection(conn);
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, con);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    msg.msgId = reader.GetInt32(0);
+                    msg.mensagem = reader.GetString(1);
+                    msg.msgData = reader.GetDateTime(2);
+                }
+                con.Close();
+                return msg;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
         //fazer login
 
         //mandar verificações
