@@ -1298,3 +1298,5 @@ C:\Programas\AppCaixaFerramentas\Mobile\AppCaixaFerramentas\AppCaixaFerramentas.
 C:\Programas\AppCaixaFerramentas\Mobile\AppCaixaFerramentas\AppCaixaFerramentas.Android\obj\Debug\130\stamp\_ResolveLibraryProjectImports.stamp
 C:\Programas\AppCaixaFerramentas\Mobile\AppCaixaFerramentas\AppCaixaFerramentas.Android\obj\Debug\130\res\drawable\heart_icon.png
 C:\Programas\AppCaixaFerramentas\Mobile\AppCaixaFerramentas\AppCaixaFerramentas.Android\obj\Debug\130\res\drawable\share_icon.png
+C:\Programas\Mobile\AppCaixaFerramentas\AppCaixaFerramentas.Android\obj\Debug\130\res\drawable\heart_icon.png
+C:\Programas\Mobile\AppCaixaFerramentas\AppCaixaFerramentas.Android\obj\Debug\130\res\drawable\share_icon.png

@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using MySqlConnector;
+using System.Buffers.Text;
+using System.Security.Cryptography;
 
 namespace AppCaixaFerramentas.Controllers
 {
@@ -74,7 +76,34 @@ namespace AppCaixaFerramentas.Controllers
                 throw new Exception(ex.Message);
             }
         }
-        //fazer login
+        
+        public bool Login(string email, string senha)
+        {
+            string cripto = encode(senha);
+
+            string sql = "SELECT * FROM login WHERE email="+ email +" AND senha="+ cripto+"";
+            MySqlConnection con = new MySqlConnection (conn);
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand (sql, con);
+            int result = (int)cmd.ExecuteScalar();
+            con.Close();
+            return true;
+        }
+
+        static string encode(string senha)
+        {
+            using(SHA256 sha256Hash = SHA256.Create())
+            {
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(senha));
+
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+                return builder.ToString();
+            }
+        }
 
         //mandar verificações
 

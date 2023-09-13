@@ -1,12 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppCaixaFerramentas.Views.PageLogin">
+             x:Class="AppCaixaFerramentas.Views.PageLogin"
+             BackgroundColor="#AECCF2">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Bem vindo à Login"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Frame CornerRadius="50"
+               BackgroundColor="AliceBlue">
+            <StackLayout>
+                <StackLayout>
+                    <Label Text="Login"/>
+                </StackLayout>
+                
+                <StackLayout>
+                    <Label Text="Insira o email"/>
+                    <Entry x:Name="txtEmail"/>
+                </StackLayout>
+                
+                <StackLayout>
+                    <Label Text="Insira a senha"/>
+                    <Entry x:Name="txtSenha" IsPassword="True"/>
+                </StackLayout>
+
+                <Button Text="Login" x:Name="btnLogin" Clicked="btnLogin_Clicked"/>
+
+            </StackLayout>
+        </Frame>
     </ContentPage.Content>
 </ContentPage>
