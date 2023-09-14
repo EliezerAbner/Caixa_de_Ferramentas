@@ -19,8 +19,11 @@ namespace AppCaixaFerramentas.Views
 
         private void btnLogin_Clicked(object sender, EventArgs e)
         {
-            MySqlController login = new MySqlController();
-            login.Login(txtEmail.Text, txtSenha.Text);
+            //MySqlController login = new MySqlController();
+            //login.Login(txtEmail.Text, txtSenha.Text); 
+
+            Navigation.PushAsync(new MainPage());
+            
         }
     }
 }
