@@ -24,7 +24,7 @@
 
                 <StackLayout>
                     <Label Text="Insira o email" TextColor="Black"/>
-                    <Entry x:Name="txtEmail" PlaceholderColor="Black" />
+                    <Entry x:Name="txtEmail"/>
                 </StackLayout>
 
                 <StackLayout>

@@ -1,12 +1,72 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppCaixaFerramentas.Views.PageListaFerramentas">
+             x:Class="AppCaixaFerramentas.Views.PageListaFerramentas"
+             BackgroundColor="#AECCF2">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Listagem de ferramentas"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+            <Frame x:Name="alertaVerificacao"
+                   IsVisible="false"
+                   BackgroundColor="AliceBlue"
+                   CornerRadius="35"
+                   HorizontalOptions="Center"
+                   VerticalOptions="StartAndExpand"
+                   WidthRequest="300"
+                   Margin="0,50,0,0">
+
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="caution_img"
+                           WidthRequest="50"
+                           HeightRequest="50"/>
+
+                    <Label Text="Não se esqueça! Verificação marcada para hoje!"
+                           TextColor="Black"
+                           FontSize="16"
+                           VerticalTextAlignment="Center"/>
+                </StackLayout>
+            </Frame>
+
+            <ListView x:Name="ferramentas">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding nome}" 
+                                       
+                                       TextColor= "Black" 
+                                       FontSize="Large"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Frame BackgroundColor="AliceBlue"
+                   CornerRadius="40">
+                
+                <StackLayout Orientation="Horizontal">
+
+                    <Button BackgroundColor="Brown"
+                       HorizontalOptions="Start"
+                       WidthRequest="70"
+                       HeightRequest="70"
+                       CornerRadius="40"/>
+
+                    <StackLayout Margin="10,0,0,0"
+                             Orientation="Vertical">
+
+                        <Label Text="teste"               
+                           TextColor= "Black" 
+                           FontSize="Large"/>
+
+                        <Label Text="testebhsdbbjdsbjsabdjsa"
+                           TextColor="Black"
+                           FontSize="Medium"/>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

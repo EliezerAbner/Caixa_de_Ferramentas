@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Programas\\AppCaixaFerramentas\\Mobile\\AppCaixaFerramentas\\AppCaixaFerramentas\\AppCaixaFerramentas.csproj": {}
+    "C:\\Users\\Aluno\\source\\repos\\Caixa_de_Ferramentas\\Mobile\\AppCaixaFerramentas\\AppCaixaFerramentas\\AppCaixaFerramentas.csproj": {}
   },
   "projects": {
-    "C:\\Programas\\AppCaixaFerramentas\\Mobile\\AppCaixaFerramentas\\AppCaixaFerramentas\\AppCaixaFerramentas.csproj": {
+    "C:\\Users\\Aluno\\source\\repos\\Caixa_de_Ferramentas\\Mobile\\AppCaixaFerramentas\\AppCaixaFerramentas\\AppCaixaFerramentas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Programas\\AppCaixaFerramentas\\Mobile\\AppCaixaFerramentas\\AppCaixaFerramentas\\AppCaixaFerramentas.csproj",
+        "projectUniqueName": "C:\\Users\\Aluno\\source\\repos\\Caixa_de_Ferramentas\\Mobile\\AppCaixaFerramentas\\AppCaixaFerramentas\\AppCaixaFerramentas.csproj",
         "projectName": "AppCaixaFerramentas",
-        "projectPath": "C:\\Programas\\AppCaixaFerramentas\\Mobile\\AppCaixaFerramentas\\AppCaixaFerramentas\\AppCaixaFerramentas.csproj",
-        "packagesPath": "C:\\Users\\eliez\\.nuget\\packages\\",
-        "outputPath": "C:\\Programas\\AppCaixaFerramentas\\Mobile\\AppCaixaFerramentas\\AppCaixaFerramentas\\obj\\",
+        "projectPath": "C:\\Users\\Aluno\\source\\repos\\Caixa_de_Ferramentas\\Mobile\\AppCaixaFerramentas\\AppCaixaFerramentas\\AppCaixaFerramentas.csproj",
+        "packagesPath": "C:\\Users\\Aluno\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Aluno\\Source\\Repos\\Caixa_de_Ferramentas\\Mobile\\AppCaixaFerramentas\\AppCaixaFerramentas\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\eliez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Aluno\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -79,7 +79,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

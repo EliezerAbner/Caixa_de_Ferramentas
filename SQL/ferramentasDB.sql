@@ -1,3 +1,4 @@
+
 -- MySQL Workbench Forward Engineering
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
@@ -18,13 +19,31 @@ CREATE SCHEMA IF NOT EXISTS `ferramentasdb` DEFAULT CHARACTER SET utf8mb4 ;
 USE `ferramentasdb` ;
 
 -- -----------------------------------------------------
+-- Table `ferramentasdb`.`login`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `ferramentasdb`.`login` (
+  `loginId` INT NOT NULL AUTO_INCREMENT,
+  `senha` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(45) NULL,
+  PRIMARY KEY (`loginId`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
 -- Table `ferramentasdb`.`supervisor`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ferramentasdb`.`supervisor` (
   `supervisorId` INT(11) NOT NULL AUTO_INCREMENT,
+  `loginId` INT NOT NULL,
   `nomeSupervisor` VARCHAR(50) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`supervisorId`))
+  PRIMARY KEY (`supervisorId`),
+  INDEX `fk_supervisor_login1_idx` (`loginId`),
+  CONSTRAINT `fk_supervisor_login1`
+    FOREIGN KEY (`loginId`)
+    REFERENCES `ferramentasdb`.`login` (`loginId`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
 
@@ -35,15 +54,22 @@ DEFAULT CHARACTER SET = utf8mb4;
 CREATE TABLE IF NOT EXISTS `ferramentasdb`.`funcionario` (
   `funcionarioId` INT(11) NOT NULL AUTO_INCREMENT,
   `supervisorId` INT(11) NOT NULL,
+  `loginId` INT NOT NULL,
   `email` VARCHAR(50) NOT NULL,
   `nomeFuncionario` VARCHAR(50) NOT NULL,
   `setor` VARCHAR(50) NOT NULL,
   `cargo` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`funcionarioId`),
-  INDEX `fk_funcionario_supervisor1_idx` (`supervisorId` ASC) VISIBLE,
+  INDEX `fk_funcionario_supervisor1_idx` (`supervisorId`),
+  INDEX `fk_funcionario_login1_idx` (`loginId`),
   CONSTRAINT `fk_funcionario_supervisor1`
     FOREIGN KEY (`supervisorId`)
     REFERENCES `ferramentasdb`.`supervisor` (`supervisorId`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_funcionario_login1`
+    FOREIGN KEY (`loginId`)
+    REFERENCES `ferramentasdb`.`login` (`loginId`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -60,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `ferramentasdb`.`ferramenta` (
   `tipo` VARCHAR(50) NOT NULL,
   `codigo` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`ferramentaId`),
-  INDEX `fk_ferramenta_funcionario1_idx` (`funcionarioId` ASC) VISIBLE,
+  INDEX `fk_ferramenta_funcionario1_idx` (`funcionarioId`),
   CONSTRAINT `fk_ferramenta_funcionario1`
     FOREIGN KEY (`funcionarioId`)
     REFERENCES `ferramentasdb`.`funcionario` (`funcionarioId`)
@@ -90,9 +116,9 @@ CREATE TABLE IF NOT EXISTS `ferramentasdb`.`verificacao` (
   `agendamentoId` INT NOT NULL,
   `dataVerificacao` DATE NOT NULL,
   PRIMARY KEY (`verificacaoId`),
-  INDEX `fk_verificacao_funcionario_idx` (`funcionarioId` ASC) VISIBLE,
-  INDEX `fk_verificacao_ferramenta1_idx` (`ferramentaId` ASC) VISIBLE,
-  INDEX `fk_verificacao_agendaVerificacao1_idx` (`agendamentoId` ASC) VISIBLE,
+  INDEX `fk_verificacao_funcionario_idx` (`funcionarioId`),
+  INDEX `fk_verificacao_ferramenta1_idx` (`ferramentaId`),
+  INDEX `fk_verificacao_agendaVerificacao1_idx` (`agendamentoId`),
   CONSTRAINT `fk_verificacao_funcionario`
     FOREIGN KEY (`funcionarioId`)
     REFERENCES `ferramentasdb`.`funcionario` (`funcionarioId`)
@@ -110,17 +136,6 @@ CREATE TABLE IF NOT EXISTS `ferramentasdb`.`verificacao` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
-
-
--- -----------------------------------------------------
--- Table `ferramentasdb`.`login`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ferramentasdb`.`login` (
-  `loginId` INT NOT NULL AUTO_INCREMENT,
-  `senha` VARCHAR(45) NOT NULL,
-  `email` VARCHAR(45) NULL,
-  PRIMARY KEY (`loginId`))
-ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------

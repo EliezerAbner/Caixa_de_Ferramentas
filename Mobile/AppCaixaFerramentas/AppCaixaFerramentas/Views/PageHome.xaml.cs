@@ -21,7 +21,7 @@ namespace AppCaixaFerramentas.Views
             Mensagem msgDoDia = new Mensagem();
             //msgDoDia = buscaMsg.MensagemDoDia();
 
-            if (false)
+            if (true)
             {
                 frameMensagem.IsVisible = true;
                 lblMsg.Text = msgDoDia.mensagem;
