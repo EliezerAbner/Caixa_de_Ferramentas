@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "6SBAnvAbtftyTiHgROlYdoSuSV4RU1AGJwmpD7PrVyuKBt8yJiFYl/lxNwnlwZBl6LVYFZyenTwcD1LeE+rSlg==",
+  "dgSpecHash": "fhCKWxBJhSJ82x50+jlMf7o8GGzS4Q7nSdctBFxwSBfElJ1hinbZsOE20m9Am/JTnrshtmpNx0hvev3g67amhg==",
   "success": true,
   "projectFilePath": "C:\\Programas\\Caixa_de_Ferramentas\\Mobile\\AppCaixaFerramentas\\AppCaixaFerramentas.Android\\AppCaixaFerramentas.Android.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\eliez\\.nuget\\packages\\fastandroidcamera\\2.0.0\\fastandroidcamera.2.0.0.nupkg.sha512",
     "C:\\Users\\eliez\\.nuget\\packages\\mysqlconnector\\2.2.7\\mysqlconnector.2.2.7.nupkg.sha512",
     "C:\\Users\\eliez\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\eliez\\.nuget\\packages\\system.componentmodel\\4.3.0\\system.componentmodel.4.3.0.nupkg.sha512",
@@ -11,6 +12,13 @@
     "C:\\Users\\eliez\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
     "C:\\Users\\eliez\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\eliez\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\eliez\\.nuget\\packages\\xamarin.android.support.annotations\\25.4.0.2\\xamarin.android.support.annotations.25.4.0.2.nupkg.sha512",
+    "C:\\Users\\eliez\\.nuget\\packages\\xamarin.android.support.compat\\25.4.0.2\\xamarin.android.support.compat.25.4.0.2.nupkg.sha512",
+    "C:\\Users\\eliez\\.nuget\\packages\\xamarin.android.support.core.ui\\25.4.0.2\\xamarin.android.support.core.ui.25.4.0.2.nupkg.sha512",
+    "C:\\Users\\eliez\\.nuget\\packages\\xamarin.android.support.core.utils\\25.4.0.2\\xamarin.android.support.core.utils.25.4.0.2.nupkg.sha512",
+    "C:\\Users\\eliez\\.nuget\\packages\\xamarin.android.support.fragment\\25.4.0.2\\xamarin.android.support.fragment.25.4.0.2.nupkg.sha512",
+    "C:\\Users\\eliez\\.nuget\\packages\\xamarin.android.support.media.compat\\25.4.0.2\\xamarin.android.support.media.compat.25.4.0.2.nupkg.sha512",
+    "C:\\Users\\eliez\\.nuget\\packages\\xamarin.android.support.v4\\25.4.0.2\\xamarin.android.support.v4.25.4.0.2.nupkg.sha512",
     "C:\\Users\\eliez\\.nuget\\packages\\xamarin.androidx.activity\\1.2.4.1\\xamarin.androidx.activity.1.2.4.1.nupkg.sha512",
     "C:\\Users\\eliez\\.nuget\\packages\\xamarin.androidx.annotation\\1.2.0.1\\xamarin.androidx.annotation.1.2.0.1.nupkg.sha512",
     "C:\\Users\\eliez\\.nuget\\packages\\xamarin.androidx.annotation.experimental\\1.1.0.1\\xamarin.androidx.annotation.experimental.1.1.0.1.nupkg.sha512",
@@ -68,7 +76,9 @@
     "C:\\Users\\eliez\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512",
     "C:\\Users\\eliez\\.nuget\\packages\\xamarin.forms.pancakeview\\2.3.0.759\\xamarin.forms.pancakeview.2.3.0.759.nupkg.sha512",
     "C:\\Users\\eliez\\.nuget\\packages\\xamarin.google.android.material\\1.4.0.2\\xamarin.google.android.material.1.4.0.2.nupkg.sha512",
-    "C:\\Users\\eliez\\.nuget\\packages\\xamarin.google.guava.listenablefuture\\1.0.0.2\\xamarin.google.guava.listenablefuture.1.0.0.2.nupkg.sha512"
+    "C:\\Users\\eliez\\.nuget\\packages\\xamarin.google.guava.listenablefuture\\1.0.0.2\\xamarin.google.guava.listenablefuture.1.0.0.2.nupkg.sha512",
+    "C:\\Users\\eliez\\.nuget\\packages\\zxing.net.mobile\\2.4.1\\zxing.net.mobile.2.4.1.nupkg.sha512",
+    "C:\\Users\\eliez\\.nuget\\packages\\zxing.net.mobile.forms\\2.4.1\\zxing.net.mobile.forms.2.4.1.nupkg.sha512"
   ],
   "logs": []
 }

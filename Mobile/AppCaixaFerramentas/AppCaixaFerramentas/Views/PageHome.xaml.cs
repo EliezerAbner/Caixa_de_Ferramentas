@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AppCaixaFerramentas.Controllers;
 using AppCaixaFerramentas.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;

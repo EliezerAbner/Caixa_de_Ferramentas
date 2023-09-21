@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "V9VCxQvJrw3O29oQsMWKCyUgPUCJd31NUeVff7/YACnUaiM9tbtCk4EEavvyiEOvzYSfO8AlarroFoKYHodnTg==",
+  "dgSpecHash": "JO6imo0Km5wd3Ww0JbQn/pEG+C8dgcSpqmnDcXjlZgW4UBZU9cISaeO17IevKGfWRVwwSoRBh4PlI/T6xrnnHA==",
   "success": true,
   "projectFilePath": "C:\\Programas\\Caixa_de_Ferramentas\\Mobile\\AppCaixaFerramentas\\AppCaixaFerramentas\\AppCaixaFerramentas.csproj",
   "expectedPackageFiles": [
@@ -18,7 +18,9 @@
     "C:\\Users\\eliez\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\eliez\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
     "C:\\Users\\eliez\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512",
-    "C:\\Users\\eliez\\.nuget\\packages\\xamarin.forms.pancakeview\\2.3.0.759\\xamarin.forms.pancakeview.2.3.0.759.nupkg.sha512"
+    "C:\\Users\\eliez\\.nuget\\packages\\xamarin.forms.pancakeview\\2.3.0.759\\xamarin.forms.pancakeview.2.3.0.759.nupkg.sha512",
+    "C:\\Users\\eliez\\.nuget\\packages\\zxing.net.mobile\\2.4.1\\zxing.net.mobile.2.4.1.nupkg.sha512",
+    "C:\\Users\\eliez\\.nuget\\packages\\zxing.net.mobile.forms\\2.4.1\\zxing.net.mobile.forms.2.4.1.nupkg.sha512"
   ],
   "logs": []
 }
