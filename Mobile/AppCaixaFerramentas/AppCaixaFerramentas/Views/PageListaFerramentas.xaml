@@ -43,7 +43,8 @@
             </ListView>
 
             <Frame BackgroundColor="AliceBlue"
-                   CornerRadius="40">
+                   CornerRadius="40"
+                   Margin="10">
                 
                 <StackLayout Orientation="Horizontal">
 
@@ -54,7 +55,7 @@
                        CornerRadius="40"/>
 
                     <StackLayout Margin="10,0,0,0"
-                             Orientation="Vertical">
+                                 Orientation="Vertical">
 
                         <Label Text="teste"               
                            TextColor= "Black" 

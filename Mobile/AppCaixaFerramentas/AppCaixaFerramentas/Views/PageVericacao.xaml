@@ -5,10 +5,6 @@
              x:Class="AppCaixaFerramentas.Views.PageVericacao">
     <ContentPage.Content>
         <StackLayout>
-            <Frame BackgroundColor="Aqua"
-                   Padding="24">
-                <Label x:Name="scanResultTest" TextColor="Black"/>
-            </Frame>
 
             <zxing:ZXingScannerView IsScanning="True"
                                     HeightRequest="500"

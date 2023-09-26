@@ -15,6 +15,4 @@
     <pages:PageVericacao Title="Verificar" IconImageSource="magnifying_icon"/>
     <pages:PageListaFerramentas Title="Minha Caixa" IconImageSource="toolbox_icon"/>
     <pages:PageAbout Title="Sobre" IconImageSource="info_icon"/>
-
-
 </TabbedPage>

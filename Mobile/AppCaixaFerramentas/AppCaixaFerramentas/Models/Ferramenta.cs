@@ -35,7 +35,8 @@ namespace AppCaixaFerramentas.Models
                                 FuncionarioId = reader.GetInt32(1),
                                 NomeFerramenta = reader.GetString(2),
                                 Tipo = reader.GetString(3),
-                                Codigo = reader.GetString(4)
+                                Codigo = reader.GetString(4),
+                                Verificado = false
                             };
                             caixaFerramentas.Add(ferramenta);
                         }
@@ -66,6 +67,30 @@ namespace AppCaixaFerramentas.Models
                 throw new Exception(ex.Message);
             }
 
+        }
+
+        public string BuscarFerramenta(string codigo) 
+        {
+            try
+            {
+                string ferramentaId; 
+                using (MySqlConnection con = new MySqlConnection(conn))
+                {
+                    string sql = "";
+                    con.Open();
+                    using(MySqlCommand cmd = new MySqlCommand(sql,con))
+                    {
+                        ferramentaId = Convert.ToString(cmd.ExecuteScalar());
+                    }
+                    con.Close();
+                }
+                return ferramentaId;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }
