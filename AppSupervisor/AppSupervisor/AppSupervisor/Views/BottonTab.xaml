@@ -8,9 +8,8 @@
             BarBackground="#1713C0"
             SelectedTabColor="#F24535"
             UnselectedTabColor="White"
-            android:TabbedPage.ToolbarPlacement="Bottom"
-            android:TabbedPage.OffscreenPageLimit="1">
+            android:TabbedPage.ToolbarPlacement="Bottom">
 
-    <pages:PageMeusFuncionarios Title="Home" IconImageSource="home_icon"/>
+    <pages:PageMeusFuncionarios Title="Home" IconImageSource="home_icon" />
     <pages:PageMensagens Title="Anúncios" IconImageSource="announcement_icon"/>
 </TabbedPage>

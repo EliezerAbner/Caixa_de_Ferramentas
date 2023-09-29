@@ -52,10 +52,10 @@ namespace AppSupervisor.Model
             return loginAutorizado;
         }
 
-        public string buscarNome(int id)
+        public string buscarNome(string email)
         {
             string nome = "";
-            string sql = "SELECT nomeSupervisor FROM supervisor WHERE supervisorId="+id+"";
+            string sql = "SELECT nomeSupervisor FROM supervisor WHERE email="+email+"";
 
             using (MySqlConnection con = new MySqlConnection(conn))
             {

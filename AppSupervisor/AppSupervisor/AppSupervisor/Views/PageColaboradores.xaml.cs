@@ -16,5 +16,21 @@ namespace AppSupervisor.Views
 		{
 			InitializeComponent ();
 		}
-	}
+		public PageColaboradores(bool novoFuncionario)
+		{
+			InitializeComponent ();
+		}
+
+        private void btnCancelar_Clicked(object sender, EventArgs e)
+        {
+            var pagAnterior = Navigation.NavigationStack.LastOrDefault();
+            Navigation.PushAsync(new BottonTab());
+            Navigation.RemovePage(pagAnterior);
+        }
+
+        private void btnCadastar_Clicked(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

@@ -13,33 +13,20 @@ namespace AppSupervisor.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class PageMeusFuncionarios : ContentPage
 	{
-        private string nomeSupervisor;
 
-		public PageMeusFuncionarios (int idObtido)
+		public PageMeusFuncionarios()
 		{
 			InitializeComponent ();
-
-            try
-            {
-                Supervisor supervisor = new Supervisor();
-                nomeSupervisor = supervisor.buscarNome(idObtido);
-                lblNome.Text = lblNome.Text + " " + nomeSupervisor;
-            }
-            catch (Exception ex)
-            {
-                DisplayAlert("Erro", ""+ex.Message+"", "OK");
-                lblNome.Text = "Seja bem vindo (a).";
-            }
 		}
 
         private void btnNovoFuncionario_Clicked(object sender, EventArgs e)
         {
-            DisplayAlert("Teste", "olá :)", "OK");
+            Navigation.PushAsync(new PageColaboradores());
         }
 
         private void btnListaFuncionario_Clicked(object sender, EventArgs e)
         {
-            DisplayAlert("Teste", "olá :)", "OK");
+            //Navigation.PushAsync(new PageColaboradores(false));
         }
 
         private void btnNovaCaixa_Clicked(object sender, EventArgs e)
