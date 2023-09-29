@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:pages="clr-namespace:AppCaixaFerramentas.Views"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            x:Class="AppCaixaFerramentas.MainPage"
+            NavigationPage.HasNavigationBar="False"
+            BarBackground="#023E73"
+            SelectedTabColor="#F24535"
+            UnselectedTabColor="White"
+            android:TabbedPage.ToolbarPlacement="Bottom">
+    
+    
+    <pages:PageHome Title="Home" IconImageSource="home_icon"/>
+    <pages:PageVericacao Title="Verificar" IconImageSource="magnifying_icon" />
+    <pages:PageListaFerramentas Title="Minha Caixa" IconImageSource="toolbox_icon"/>
+    <pages:PageAbout Title="Sobre" IconImageSource="info_icon"/>
+</TabbedPage>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            xmlns:pages="clr-namespace:AppSupervisor.Views"
+            x:Class="AppSupervisor.Views.BottonTab"
+            NavigationPage.HasNavigationBar="False"
+            BarBackground="#1713C0"
+            SelectedTabColor="#F24535"
+            UnselectedTabColor="White"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            android:TabbedPage.OffscreenPageLimit="1">
+
+    <pages:PageMeusFuncionarios Title="Home" IconImageSource="home_icon"/>
+    <pages:PageMensagens Title="Anúncios" IconImageSource="announcement_icon"/>
+</TabbedPage>
