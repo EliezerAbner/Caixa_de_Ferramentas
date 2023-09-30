@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppSupervisor.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,12 +15,29 @@ namespace AppSupervisor.Views
 	{
 		public PageColaboradores ()
 		{
-			InitializeComponent ();
+            try
+            {
+                InitializeComponent();
+
+                Setor setor = new Setor();
+                pickerSetores.ItemsSource = setor.BuscarSetor();
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("Erro", "Infelizmente não estamos conseguindo cadastrar novos colaboradores. Erro: "+ex.Message+"", "OK");
+                btnCadastar.IsEnabled = false;
+            }
+
+            layoutNovoColaborador.IsEnabled = true;
 		}
 		public PageColaboradores(bool novoFuncionario)
 		{
 			InitializeComponent ();
-		}
+
+            layoutNovoColaborador.IsVisible = false;
+            layoutListaColaborador.IsVisible = true;
+            lblTitulo.Text = "Meus Colaboradores";
+        }
 
         private void btnCancelar_Clicked(object sender, EventArgs e)
         {
@@ -30,7 +48,30 @@ namespace AppSupervisor.Views
 
         private void btnCadastar_Clicked(object sender, EventArgs e)
         {
+			if (txtNome.Text != "" && txtEmail.Text != "" && txtCargo.Text != "" && txtSenha.Text != "" && txtSenhaNov.Text != "")
+			{
+                try
+                {
+                    Funcionario novoFuncionario = new Funcionario()
+                    {
+                        SupervisorId = 1, //pro futuro
+                        NomeFuncionario = txtNome.Text,
+                        Email = txtEmail.Text,
+                        Setor =  "Teste",//corrigir
+                        Cargo = txtCargo.Text
+                    };
 
+                    novoFuncionario.CadastrarFuncionario(novoFuncionario);
+                }
+                catch (Exception ex)
+                {
+                    DisplayAlert("Erro", "" + ex.Message + "", "OK");
+                }
+
+                var pagAnterior = Navigation.NavigationStack.LastOrDefault();
+                Navigation.PushAsync(new BottonTab());
+                Navigation.RemovePage(pagAnterior);
+            }
         }
     }
 }

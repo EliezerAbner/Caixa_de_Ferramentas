@@ -17,7 +17,8 @@
     <ScrollView>
         <StackLayout VerticalOptions="Fill">
             <StackLayout HeightRequest="80">
-                <Label Text="Cadastro de Colaboradores"
+                <Label x:Name="lblTitulo"
+                       Text="Cadastro de Colaboradores"
                        TextColor="White"
                        FontSize="23"
                        Margin="5,25,0,0"
@@ -30,8 +31,7 @@
 
                 <StackLayout Margin="20,30,20,20">
                     
-                    <StackLayout x:Name="layoutNovoColaborador"
-                                 IsVisible="True">
+                    <StackLayout x:Name="layoutNovoColaborador">
 
                         <Label Text="Informações Pessoais" TextColor="#1713C0" HorizontalTextAlignment="Center" FontSize="20"/>
 
@@ -40,7 +40,7 @@
                             <yummy:PancakeView BackgroundColor="Transparent"
                                                Border="{yummy:BorderMarkup Color=#000000, Thickness='1'}" >
 
-                                <Entry x:Name="txtNome" Keyboard="Default" TextColor="Black"/>
+                                <Entry x:Name="txtNome" Keyboard="Default" TextColor="Black" ReturnType="Next"/>
                             </yummy:PancakeView>
                         </StackLayout>
 
@@ -49,7 +49,7 @@
                             <yummy:PancakeView BackgroundColor="Transparent"
                                                Border="{yummy:BorderMarkup Color=#000000, Thickness='1'}" >
 
-                                <Entry x:Name="txtEmail" Keyboard="Email" TextColor="Black"/>
+                                <Entry x:Name="txtEmail" Keyboard="Email" TextColor="Black" ReturnType="Next"/>
                             </yummy:PancakeView>
                         </StackLayout>
 
@@ -60,7 +60,13 @@
                             <yummy:PancakeView BackgroundColor="Transparent"
                                                Border="{yummy:BorderMarkup Color=#000000, Thickness='1'}" >
 
-                                <Entry x:Name="txtSetor" Keyboard="Default" TextColor="Black"/>
+                                <Picker x:Name="pickerSetores"
+                                        Title="Selecione um setor"
+                                        TitleColor="Black"
+                                        Margin="5,0,5,0"
+                                        ItemDisplayBinding="{Binding NomeSetor}">
+                                    
+                                </Picker>
                             </yummy:PancakeView>
                         </StackLayout>
 
@@ -69,7 +75,7 @@
                             <yummy:PancakeView BackgroundColor="Transparent"
                                                Border="{yummy:BorderMarkup Color=#000000, Thickness='1'}" >
 
-                                <Entry x:Name="txtCargo" Keyboard="Default" TextColor="Black"/>
+                                <Entry x:Name="txtCargo" Keyboard="Default" TextColor="Black" ReturnType="Next"/>
                             </yummy:PancakeView>
                         </StackLayout>
 
@@ -80,16 +86,17 @@
                             <yummy:PancakeView BackgroundColor="Transparent"
                                                Border="{yummy:BorderMarkup Color=#000000, Thickness='1'}" >
 
-                                <Entry x:Name="txtSenha" IsPassword="True" Keyboard="Default" TextColor="Black"/>
+                                <Entry x:Name="txtSenha" IsPassword="True" Keyboard="Default" TextColor="Black" ReturnType="Next"/>
                             </yummy:PancakeView>
                         </StackLayout>
 
                         <StackLayout Margin="0,5,0,5">
                             <Label Text="Insira a senha Novamente" TextColor="Black" FontAttributes="Bold" FontSize="18"/>
-                            <yummy:PancakeView BackgroundColor="Transparent"
+                            <yummy:PancakeView x:Name="pvSenhaNov"
+                                               BackgroundColor="Transparent"
                                                Border="{yummy:BorderMarkup Color=#000000, Thickness='1'}" >
 
-                                <Entry x:Name="txtSenhaNov" IsPassword="True" Keyboard="Default" TextColor="Black"/>
+                                <Entry x:Name="txtSenhaNov" IsPassword="True" Keyboard="Default" TextColor="Black" ReturnType="Go"/>
                             </yummy:PancakeView>
                         </StackLayout>
 
@@ -110,9 +117,28 @@
                         </StackLayout>
                     </StackLayout>
 
-                    <StackLayout x:Name="layoutListaColaborador"
-                                 IsVisible="False">
+                    <StackLayout x:Name="layoutListaColaborador">
 
+                        <StackLayout Margin="10">
+                            
+                        </StackLayout>
+
+                        <yummy:PancakeView BackgroundColor="Transparent"
+                                           Border="{yummy:BorderMarkup Color=#000000, Thickness='1'}">
+                            
+                            <StackLayout Orientation="Vertical" 
+                                         HorizontalOptions="FillAndExpand"
+                                         Margin="20,5,10,5">
+
+                                <Label Text="Nome Colaborador"               
+                                       TextColor= "Black" 
+                                       FontSize="Large"/>
+
+                                <Label Text="Cargo"
+                                       TextColor="Black"
+                                       FontSize="Medium"/>
+                            </StackLayout>
+                        </yummy:PancakeView>
                     </StackLayout>
                 </StackLayout>
 

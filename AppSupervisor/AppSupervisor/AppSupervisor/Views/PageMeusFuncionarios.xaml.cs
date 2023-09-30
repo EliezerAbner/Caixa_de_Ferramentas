@@ -26,7 +26,7 @@ namespace AppSupervisor.Views
 
         private void btnListaFuncionario_Clicked(object sender, EventArgs e)
         {
-            //Navigation.PushAsync(new PageColaboradores(false));
+            Navigation.PushAsync(new PageColaboradores(false));
         }
 
         private void btnNovaCaixa_Clicked(object sender, EventArgs e)

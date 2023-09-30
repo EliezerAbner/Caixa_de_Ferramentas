@@ -34,12 +34,12 @@
 
                 <StackLayout>
                     <Label Text="Insira o email" TextColor="Black"/>
-                    <Entry x:Name="txtEmail" Keyboard="Email" TextColor="Black"/>
+                    <Entry x:Name="txtEmail" Keyboard="Email" TextColor="Black" ReturnType="Next" ClearButtonVisibility="WhileEditing"/>
                 </StackLayout>
 
                 <StackLayout>
                     <Label Text="Insira a senha" TextColor="Black"/>
-                    <Entry x:Name="txtSenha" IsPassword="True" TextColor="Black"/>
+                    <Entry x:Name="txtSenha" IsPassword="True" TextColor="Black" ReturnType="Go" ClearButtonVisibility="WhileEditing"/>
                 </StackLayout>
 
                 <yummy:PancakeView BackgroundColor="#0400B0" 
