@@ -49,7 +49,7 @@ namespace AppSupervisor.Views
                     if (true) //autorizado
                     {
                         var pagAnterior = Navigation.NavigationStack.LastOrDefault();
-                        Navigation.PushAsync(new BottonTab());
+                        Navigation.PushAsync(new PageMeusFuncionarios());
                         Navigation.RemovePage(pagAnterior);
                     }
                     else

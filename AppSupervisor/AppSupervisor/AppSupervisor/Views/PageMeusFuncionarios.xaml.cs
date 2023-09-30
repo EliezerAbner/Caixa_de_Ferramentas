@@ -44,9 +44,14 @@ namespace AppSupervisor.Views
 
         }
 
+        private void btnNovoAnuncio_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new PageMensagens());
+        }
+
         private async void btnLogout_Clicked(object sender, EventArgs e)
         {
-           var resposta = await DisplayAlert("Confirmar Logoff", "Tem certeza que deseja sair?", "Sim", "Não");
+           var resposta = await DisplayAlert("Confirmar Logout", "Tem certeza que deseja sair?", "Sim", "Não");
 
             if (resposta)
             {
@@ -67,5 +72,7 @@ namespace AppSupervisor.Views
                 DisplayAlert("Erro", ""+ex.Message+"", "OK");
             }
         }
+
+        
     }
 }

@@ -34,7 +34,6 @@ C:\Users\Aluno\source\repos\Caixa_de_Ferramentas\AppSupervisor\AppSupervisor\App
 C:\Users\Aluno\source\repos\Caixa_de_Ferramentas\AppSupervisor\AppSupervisor\AppSupervisor\obj\Debug\netstandard2.0\Views\PageMeusFuncionarios.xaml.g.cs
 C:\Users\Aluno\source\repos\Caixa_de_Ferramentas\AppSupervisor\AppSupervisor\AppSupervisor\obj\Debug\netstandard2.0\Views\PageVerificacao.xaml.g.cs
 C:\Users\Aluno\source\repos\Caixa_de_Ferramentas\AppSupervisor\AppSupervisor\AppSupervisor\obj\Debug\netstandard2.0\Views\BottonTab.xaml.g.cs
-C:\Programas\Caixa_de_Ferramentas\AppSupervisor\AppSupervisor\AppSupervisor\obj\Debug\netstandard2.0\Views\BottonTab.xaml.g.cs
 C:\Programas\Caixa_de_Ferramentas\AppSupervisor\AppSupervisor\AppSupervisor\obj\Debug\netstandard2.0\Views\PageVerificacao.xaml.g.cs
 C:\Programas\Caixa_de_Ferramentas\AppSupervisor\AppSupervisor\AppSupervisor\obj\Debug\netstandard2.0\Views\PageMensagens.xaml.g.cs
 C:\Programas\Caixa_de_Ferramentas\AppSupervisor\AppSupervisor\AppSupervisor\obj\Debug\netstandard2.0\Views\PageCaixaFerram.xaml.g.cs
