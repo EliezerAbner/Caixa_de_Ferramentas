@@ -79,9 +79,9 @@
                             </yummy:PancakeView>
                         </StackLayout>
 
-                        <Label Text="Login" TextColor="#1713C0" HorizontalTextAlignment="Center" FontSize="20" Margin="0,20,0,10"/>
+                        <Label x:Name="lblLogin" Text="Login" TextColor="#1713C0" HorizontalTextAlignment="Center" FontSize="20" Margin="0,20,0,10"/>
 
-                        <StackLayout Margin="0,5,0,5">
+                        <StackLayout Margin="0,5,0,5" x:Name="slSenha">
                             <Label Text="Senha" TextColor="Black" FontAttributes="Bold" FontSize="18"/>
                             <yummy:PancakeView BackgroundColor="Transparent"
                                                Border="{yummy:BorderMarkup Color=#000000, Thickness='1'}" >
@@ -90,14 +90,19 @@
                             </yummy:PancakeView>
                         </StackLayout>
 
-                        <StackLayout Margin="0,5,0,5">
+                        <StackLayout Margin="0,5,0,5" x:Name="slSenhaNov">
                             <Label Text="Insira a senha Novamente" TextColor="Black" FontAttributes="Bold" FontSize="18"/>
                             <yummy:PancakeView x:Name="pvSenhaNov"
                                                BackgroundColor="Transparent"
                                                Border="{yummy:BorderMarkup Color=#000000, Thickness='1'}" >
 
-                                <Entry x:Name="txtSenhaNov" IsPassword="True" Keyboard="Default" TextColor="Black" ReturnType="Go"/>
+                                <Entry x:Name="txtSenhaNov" TextChanged="txtSenhaNov_TextChanged" IsPassword="True" Keyboard="Default" TextColor="Black" ReturnType="Go"/>
                             </yummy:PancakeView>
+                            
+                            <Label x:Name="lblSenha" 
+                                   IsVisible="False"
+                                   Text="** As senhas não batem"
+                                   TextColor="#F0555E"/>
                         </StackLayout>
 
                         <StackLayout Orientation="Horizontal" Margin="20" HorizontalOptions="Center">
@@ -123,22 +128,46 @@
                             
                         </StackLayout>
 
-                        <yummy:PancakeView BackgroundColor="Transparent"
-                                           Border="{yummy:BorderMarkup Color=#000000, Thickness='1'}">
-                            
-                            <StackLayout Orientation="Vertical" 
-                                         HorizontalOptions="FillAndExpand"
-                                         Margin="20,5,10,5">
+                        <ListView x:Name="lista">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <SwipeView BackgroundColor="Transparent">
 
-                                <Label Text="Nome Colaborador"               
-                                       TextColor= "Black" 
-                                       FontSize="Large"/>
+                                            <SwipeView.RightItems>
+                                                <SwipeItems>
+                                                    <SwipeItem Text="Editar"
+                                                               BackgroundColor="Green"
+                                                               IconImageSource="pencil_icon"
+                                                               Invoked="SwipeItem_Invoked"
+                                                               CommandParameter="{Binding .}">
+                                                    </SwipeItem>
+                                                </SwipeItems>
+                                            </SwipeView.RightItems>
 
-                                <Label Text="Cargo"
-                                       TextColor="Black"
-                                       FontSize="Medium"/>
-                            </StackLayout>
-                        </yummy:PancakeView>
+                                            <StackLayout Orientation="Vertical" 
+                                                         HorizontalOptions="FillAndExpand"
+                                                         BackgroundColor="Transparent"
+                                                         Margin="20,5,10,5">
+
+                                                <Label Text="{Binding NomeFuncionario}"               
+                                                       TextColor= "Black" 
+                                                       FontSize="18"/>
+
+                                                <Label Text="{Binding Cargo}"
+                                                       TextColor="Black"
+                                                       FontSize="Medium"/>
+                                            </StackLayout>
+                                        </SwipeView>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+
+                        
+                        
+
+                        
                     </StackLayout>
                 </StackLayout>
 

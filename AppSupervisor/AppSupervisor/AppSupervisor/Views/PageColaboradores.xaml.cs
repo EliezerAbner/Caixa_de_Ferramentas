@@ -25,18 +25,46 @@ namespace AppSupervisor.Views
             catch (Exception ex)
             {
                 DisplayAlert("Erro", "Infelizmente não estamos conseguindo cadastrar novos colaboradores. Erro: "+ex.Message+"", "OK");
-                btnCadastar.IsEnabled = false;
             }
 
-            layoutNovoColaborador.IsEnabled = true;
-		}
-		public PageColaboradores(bool novoFuncionario)
+            layoutNovoColaborador.IsVisible = true;
+            layoutListaColaborador.IsVisible = false;
+            btnCadastar.IsEnabled = false;
+        }
+
+		public PageColaboradores(bool novoFuncionario, int idSupervisor)
 		{
 			InitializeComponent ();
 
             layoutNovoColaborador.IsVisible = false;
             layoutListaColaborador.IsVisible = true;
             lblTitulo.Text = "Meus Colaboradores";
+
+            try
+            {
+                Funcionario funcionario = new Funcionario();
+                lista.ItemsSource = funcionario.ListaFuncionarios(idSupervisor);
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("Erro", "Infelizmente não estamos conseguindo obter a lista de colaboradores. Erro: "+ex.Message+"", "OK");
+            }
+        }
+
+        private void txtSenhaNov_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txtSenha.Text != txtSenhaNov.Text)
+            {
+                txtSenhaNov.TextColor = Color.FromHex("#F0555E");
+                lblSenha.IsVisible = true;
+                btnCadastar.IsEnabled = false;
+            }
+            else
+            {
+                txtSenhaNov.TextColor = Color.Black;
+                lblSenha.IsVisible = false;
+                btnCadastar.IsEnabled = true;
+            }
         }
 
         private void btnCancelar_Clicked(object sender, EventArgs e)
@@ -48,30 +76,68 @@ namespace AppSupervisor.Views
 
         private void btnCadastar_Clicked(object sender, EventArgs e)
         {
-			if (txtNome.Text != "" && txtEmail.Text != "" && txtCargo.Text != "" && txtSenha.Text != "" && txtSenhaNov.Text != "")
+			if (txtNome.Text != "" && txtEmail.Text != "" && txtCargo.Text != "" && txtSenha.Text != "" && txtSenhaNov.Text != "" && pickerSetores.SelectedItem.ToString() != "")
 			{
-                try
+                if(btnCadastar.Text == "Editar")
                 {
-                    Funcionario novoFuncionario = new Funcionario()
-                    {
-                        SupervisorId = 1, //pro futuro
-                        NomeFuncionario = txtNome.Text,
-                        Email = txtEmail.Text,
-                        Setor =  "Teste",//corrigir
-                        Cargo = txtCargo.Text
-                    };
-
-                    novoFuncionario.CadastrarFuncionario(novoFuncionario);
+                    DisplayAlert("Teste", "Teste :)", "OK");
                 }
-                catch (Exception ex)
+                else
                 {
-                    DisplayAlert("Erro", "" + ex.Message + "", "OK");
+                    try
+                    {
+                        Funcionario novoFuncionario = new Funcionario()
+                        {
+                            SupervisorId = 2, //pro futuro
+                            NomeFuncionario = txtNome.Text,
+                            Email = txtEmail.Text,
+                            SetorId = pickerSetores.SelectedIndex,
+                            Cargo = txtCargo.Text,
+                            Senha = txtSenha.Text
+                        };
+
+                        novoFuncionario.CadastrarFuncionario(novoFuncionario);
+                    }
+                    catch (Exception ex)
+                    {
+                        DisplayAlert("Erro", "" + ex.Message + "", "OK");
+                    }
                 }
 
                 var pagAnterior = Navigation.NavigationStack.LastOrDefault();
                 Navigation.PushAsync(new PageMeusFuncionarios());
                 Navigation.RemovePage(pagAnterior);
             }
+            else
+            {
+                DisplayAlert("Informações faltando", "Insira todas as informações necessárias", "OK");
+            }
         }
+
+        private void SwipeItem_Invoked(object sender, EventArgs e)
+        {
+            var editarBtn = sender as MenuItem;
+            var funcionario = editarBtn.CommandParameter as Funcionario;
+
+            layoutListaColaborador.IsVisible = false;
+            layoutNovoColaborador.IsVisible = true;
+            lblTitulo.Text = "Editar Informações";
+
+            Setor setor = new Setor();
+            pickerSetores.ItemsSource = setor.BuscarSetor();
+
+            txtNome.Text = funcionario.NomeFuncionario;
+            txtEmail.Text = funcionario.Email;
+            txtCargo.Text = funcionario.Cargo;
+            pickerSetores.SelectedIndex = funcionario.SetorId;
+            
+            lblLogin.IsVisible = false;
+            slSenha.IsVisible = false;
+            slSenhaNov.IsVisible = false;
+
+            btnCadastar.Text = "Editar";
+        }
+
+        
     }
 }

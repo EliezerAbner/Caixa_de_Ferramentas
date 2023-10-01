@@ -20,7 +20,7 @@ namespace AppSupervisor.Model
         public int SupervisorId { get; set; }
         public string NomeFuncionario { get; set; }
         public string Email { get; set; }
-        public string Setor { get; set; }
+        public int SetorId { get; set; }
         public string Cargo { get; set; }
 
         private static string Encode(string senha)
@@ -44,7 +44,7 @@ namespace AppSupervisor.Model
 
             using (MySqlConnection con = new MySqlConnection(conn))
             {
-                string sql = "INSERT INTO funcionario (supervisorId, nomeFuncionario, email, setor, cargo) VALUES (" + funcionario.SupervisorId + ", " + funcionario.NomeFuncionario + ", " + funcionario.Email + ", " + funcionario.Setor + ", " + funcionario.Cargo + ")";
+                string sql = "INSERT INTO funcionario (supervisorId, nomeFuncionario, email, setorId, cargo) VALUES ('" + funcionario.SupervisorId + "', '" + funcionario.NomeFuncionario + "', '" + funcionario.Email + "', '" + funcionario.SetorId + "', '" + funcionario.Cargo + "')";
                 con.Open();
 
                 using (MySqlCommand cmd = new MySqlCommand(sql, con))
@@ -56,7 +56,7 @@ namespace AppSupervisor.Model
 
             using (MySqlConnection con = new MySqlConnection(conn))
             {
-                string sql = "SELECT funcionarioId FROM funcionario WHERE email="+funcionario.Email+"";
+                string sql = "SELECT funcionarioId FROM funcionario WHERE email='"+funcionario.Email+"'";
                 con.Open();
 
                 using (MySqlCommand cmd = new MySqlCommand(sql, con))
@@ -68,7 +68,7 @@ namespace AppSupervisor.Model
 
             using (MySqlConnection con = new MySqlConnection(conn))
             {
-                string sql = "INSERT INTO loginFuncionario () VALUES ()";
+                string sql = "INSERT INTO loginFuncionario (funcionarioId, senha) VALUES ("+idObtido+", '"+funcionario.senha+"')";
                 con.Open();
 
                 using (MySqlCommand cmd = new MySqlCommand(sql, con))
@@ -77,6 +77,54 @@ namespace AppSupervisor.Model
                 }
                 con.Close();
             }
+        }
+
+        public void Editar(Funcionario funcionario)
+        {
+            using (MySqlConnection con = new MySqlConnection(conn))
+            {
+                string sql = "UPDATE funcionario SET nome=" + funcionario.NomeFuncionario + ", email=" + funcionario.Email + ", cargo=" + funcionario.Cargo + " WHERE supervisorId="+funcionario.SupervisorId+")";
+                con.Open();
+
+                using (MySqlCommand cmd = new MySqlCommand(sql, con))
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                con.Close();
+            }
+        }
+
+        public List<Funcionario> ListaFuncionarios(int idSupervisor)
+        {
+            List<Funcionario> funcionarios = new List<Funcionario>();
+            string sql = "SELECT * FROM funcionario WHERE supervisorId="+idSupervisor+"";
+
+            using (MySqlConnection con = new MySqlConnection(conn))
+            {
+                con.Open();
+                using (MySqlCommand cmd = new MySqlCommand(sql, con))
+                {
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Funcionario funcionario = new Funcionario()
+                            {
+                                Id = reader.GetInt32(0),
+                                SupervisorId = reader.GetInt32(1),
+                                NomeFuncionario = reader.GetString(2),
+                                Email = reader.GetString(3),
+                                SetorId = reader.GetInt32(4),
+                                Cargo = reader.GetString(5)
+                            };
+                            funcionarios.Add(funcionario);
+                        }
+                    }
+                }
+                con.Close();
+            }
+
+            return funcionarios;
         }
     }
 }
