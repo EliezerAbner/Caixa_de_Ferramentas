@@ -4102,9 +4102,21 @@
             "target": "Package",
             "version": "[2.2.7, )"
           },
+          "MySqlConnector": {
+            "target": "Package",
+            "version": "[2.2.7, )"
+          },
           "Xamarin.Essentials": {
             "target": "Package",
             "version": "[1.7.0, )"
+          },
+          "Xamarin.Essentials": {
+            "target": "Package",
+            "version": "[1.7.0, )"
+          },
+          "Xamarin.Forms": {
+            "target": "Package",
+            "version": "[5.0.0.2196, )"
           },
           "Xamarin.Forms": {
             "target": "Package",
@@ -4114,7 +4126,19 @@
             "target": "Package",
             "version": "[2.3.0.759, )"
           },
+          "Xamarin.Forms.PancakeView": {
+            "target": "Package",
+            "version": "[2.3.0.759, )"
+          },
           "ZXing.Net.Mobile": {
+            "target": "Package",
+            "version": "[2.4.1, )"
+          },
+          "ZXing.Net.Mobile": {
+            "target": "Package",
+            "version": "[2.4.1, )"
+          },
+          "ZXing.Net.Mobile.Forms": {
             "target": "Package",
             "version": "[2.4.1, )"
           },

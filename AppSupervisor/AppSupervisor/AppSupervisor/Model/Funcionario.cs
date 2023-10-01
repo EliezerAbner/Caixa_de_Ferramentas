@@ -83,7 +83,7 @@ namespace AppSupervisor.Model
         {
             using (MySqlConnection con = new MySqlConnection(conn))
             {
-                string sql = "UPDATE funcionario SET nome=" + funcionario.NomeFuncionario + ", email=" + funcionario.Email + ", cargo=" + funcionario.Cargo + " WHERE supervisorId="+funcionario.SupervisorId+")";
+                string sql = "UPDATE funcionario SET nomeFuncionario='" + funcionario.NomeFuncionario + "', email='" + funcionario.Email + "', cargo='" + funcionario.Cargo + "' WHERE funcionarioId="+funcionario.Id+"";
                 con.Open();
 
                 using (MySqlCommand cmd = new MySqlCommand(sql, con))

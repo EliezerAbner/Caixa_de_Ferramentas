@@ -13,6 +13,10 @@ namespace AppSupervisor.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class PageColaboradores : ContentPage
 	{
+        private int idSupervisor;
+
+        private int funcionarioId;
+
 		public PageColaboradores ()
 		{
             try
@@ -32,9 +36,11 @@ namespace AppSupervisor.Views
             btnCadastar.IsEnabled = false;
         }
 
-		public PageColaboradores(bool novoFuncionario, int idSupervisor)
+		public PageColaboradores(bool novoFuncionario, int idObtido)
 		{
 			InitializeComponent ();
+
+            idSupervisor = idObtido;
 
             layoutNovoColaborador.IsVisible = false;
             layoutListaColaborador.IsVisible = true;
@@ -43,7 +49,7 @@ namespace AppSupervisor.Views
             try
             {
                 Funcionario funcionario = new Funcionario();
-                lista.ItemsSource = funcionario.ListaFuncionarios(idSupervisor);
+                lista.ItemsSource = funcionario.ListaFuncionarios(idObtido);
             }
             catch (Exception ex)
             {
@@ -80,7 +86,24 @@ namespace AppSupervisor.Views
 			{
                 if(btnCadastar.Text == "Editar")
                 {
-                    DisplayAlert("Teste", "Teste :)", "OK");
+                    try
+                    {
+                        Funcionario editarFuncionario = new Funcionario()
+                        {
+                            Id = funcionarioId,
+                            SupervisorId = idSupervisor,
+                            NomeFuncionario = txtNome.Text,
+                            Email = txtEmail.Text,
+                            Cargo = txtCargo.Text,
+                            SetorId = pickerSetores.SelectedIndex
+                        };
+
+                        editarFuncionario.Editar(editarFuncionario);
+                    }
+                    catch (Exception ex)
+                    {
+                        DisplayAlert("", "Estamos com dificuldades para alterar os dados. Erro: "+ex.Message+"", "OK");
+                    }
                 }
                 else
                 {
@@ -118,6 +141,7 @@ namespace AppSupervisor.Views
         {
             var editarBtn = sender as MenuItem;
             var funcionario = editarBtn.CommandParameter as Funcionario;
+            funcionarioId = funcionario.Id;
 
             layoutListaColaborador.IsVisible = false;
             layoutNovoColaborador.IsVisible = true;

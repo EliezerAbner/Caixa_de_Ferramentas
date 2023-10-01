@@ -40,7 +40,7 @@
                             <yummy:PancakeView BackgroundColor="Transparent"
                                                Border="{yummy:BorderMarkup Color=#000000, Thickness='1'}" >
 
-                                <Entry x:Name="txtNome" Keyboard="Default" TextColor="Black" ReturnType="Next"/>
+                                <Entry x:Name="txtNome" Keyboard="Default" TextColor="Black" ReturnType="Next" ClearButtonVisibility="WhileEditing"/>
                             </yummy:PancakeView>
                         </StackLayout>
 
@@ -49,7 +49,7 @@
                             <yummy:PancakeView BackgroundColor="Transparent"
                                                Border="{yummy:BorderMarkup Color=#000000, Thickness='1'}" >
 
-                                <Entry x:Name="txtEmail" Keyboard="Email" TextColor="Black" ReturnType="Next"/>
+                                <Entry x:Name="txtEmail" Keyboard="Email" TextColor="Black" ReturnType="Next" ClearButtonVisibility="WhileEditing"/>
                             </yummy:PancakeView>
                         </StackLayout>
 
@@ -63,6 +63,7 @@
                                 <Picker x:Name="pickerSetores"
                                         Title="Selecione um setor"
                                         TitleColor="Black"
+                                        TextColor="Black"
                                         Margin="5,0,5,0"
                                         ItemDisplayBinding="{Binding NomeSetor}">
                                     
@@ -75,7 +76,7 @@
                             <yummy:PancakeView BackgroundColor="Transparent"
                                                Border="{yummy:BorderMarkup Color=#000000, Thickness='1'}" >
 
-                                <Entry x:Name="txtCargo" Keyboard="Default" TextColor="Black" ReturnType="Next"/>
+                                <Entry x:Name="txtCargo" Keyboard="Default" TextColor="Black" ReturnType="Next" ClearButtonVisibility="WhileEditing"/>
                             </yummy:PancakeView>
                         </StackLayout>
 
@@ -128,7 +129,7 @@
                             
                         </StackLayout>
 
-                        <ListView x:Name="lista">
+                        <ListView x:Name="lista" SeparatorColor="#5BBDFA" HasUnevenRows="True" IsPullToRefreshEnabled="True">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
@@ -145,19 +146,24 @@
                                                 </SwipeItems>
                                             </SwipeView.RightItems>
 
-                                            <StackLayout Orientation="Vertical" 
-                                                         HorizontalOptions="FillAndExpand"
-                                                         BackgroundColor="Transparent"
-                                                         Margin="20,5,10,5">
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="30"/>
+                                                    <RowDefinition Height="30"/>
+                                                </Grid.RowDefinitions>
 
-                                                <Label Text="{Binding NomeFuncionario}"               
-                                                       TextColor= "Black" 
-                                                       FontSize="18"/>
+                                                <Label Grid.Row="0"
+                                                       Text="{Binding NomeFuncionario}"               
+                                                       TextColor= "Black"
+                                                       VerticalTextAlignment="Center"
+                                                       FontSize="23"/>
 
-                                                <Label Text="{Binding Cargo}"
+                                                <Label Grid.Row="1"
+                                                       Text="{Binding Cargo}"
                                                        TextColor="Black"
-                                                       FontSize="Medium"/>
-                                            </StackLayout>
+                                                       VerticalTextAlignment="Center"
+                                                       FontSize="18"/>
+                                            </Grid>
                                         </SwipeView>
                                     </ViewCell>
                                 </DataTemplate>

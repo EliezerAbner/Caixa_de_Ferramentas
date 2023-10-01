@@ -21,8 +21,6 @@ com.google.android.material.bottomnavigation.BottomNavigationView;C:\Programas\C
 com.google.android.material.tabs.TabLayout;C:\Programas\Caixa_de_Ferramentas\AppSupervisor\AppSupervisor\AppSupervisor.Android\obj\Debug\130\lp\56\jl\res\layout\fallbacktabbardonotuse.xml
 com.google.android.material.tabs.TabLayout;C:\Programas\Caixa_de_Ferramentas\AppSupervisor\AppSupervisor\AppSupervisor.Android\obj\Debug\130\lp\56\jl\res\layout\rootlayout.xml
 com.google.android.material.tabs.TabLayout;C:\Programas\Caixa_de_Ferramentas\AppSupervisor\AppSupervisor\AppSupervisor.Android\obj\Debug\130\lp\56\jl\res\layout\tabbar.xml
-crc643f46942d9dd1fff9.ShellFlyoutLayout;C:\Programas\Caixa_de_Ferramentas\AppSupervisor\AppSupervisor\AppSupervisor.Android\obj\Debug\130\lp\56\jl\res\layout\flyoutcontent.xml
-crc64720bb2db43a66fe9.FormsViewPager;C:\Programas\Caixa_de_Ferramentas\AppSupervisor\AppSupervisor\AppSupervisor.Android\obj\Debug\130\lp\56\jl\res\layout\rootlayout.xml
 declare-styleable;C:\Programas\Caixa_de_Ferramentas\AppSupervisor\AppSupervisor\AppSupervisor.Android\obj\Debug\130\lp\56\jl\res\values\attrs.xml
 external-cache-path;C:\Programas\Caixa_de_Ferramentas\AppSupervisor\AppSupervisor\AppSupervisor.Android\obj\Debug\130\lp\54\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 external-path;C:\Programas\Caixa_de_Ferramentas\AppSupervisor\AppSupervisor\AppSupervisor.Android\obj\Debug\130\lp\54\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
