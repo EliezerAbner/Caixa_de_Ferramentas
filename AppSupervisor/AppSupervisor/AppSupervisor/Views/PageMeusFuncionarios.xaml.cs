@@ -38,7 +38,7 @@ namespace AppSupervisor.Views
 
         private void btnNovaCaixa_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new PageCaixaFerram());
+            Navigation.PushAsync(new PageCaixaFerram(idSupervisor));
         }
 
         private void btnChecarVerificacoes_Clicked(object sender, EventArgs e)

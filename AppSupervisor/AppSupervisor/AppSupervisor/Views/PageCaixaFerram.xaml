@@ -14,9 +14,10 @@
                       Offset="1.0" />
         </LinearGradientBrush>
     </ContentPage.Background>
-    
-    <ContentPage.Content>
+
+    <ScrollView>
         <StackLayout>
+
             <StackLayout HeightRequest="80">
                 <Label x:Name="lblTitulo"
                        Text="Nova Caixa de Ferramentas"
@@ -30,9 +31,9 @@
                                CornerRadius="30,30,0,0"
                                VerticalOptions="FillAndExpand">
 
-                <StackLayout Margin="10,0,0,10">
-                    <StackLayout Margin="0,35,0,0">
-                        <Label Text="Dono da caixa"/>
+                <StackLayout>
+                    <StackLayout Margin="10,35,0,0">
+                        <Label Text="Dono da caixa" TextColor="Black"/>
                         <Picker x:Name="pickerFuncionarios"
                                 Title="A quem pertence a caixa"
                                 TextColor="Black"
@@ -41,11 +42,158 @@
                         </Picker>
                     </StackLayout>
 
-                    <Button Text="Abrir scanner" Clicked="Button_Clicked_1"/>
+                    <StackLayout Margin="10,0,0,0" Orientation="Horizontal">
+                        <StackLayout>
+                            <Label Text="Código da caixa" TextColor="Black"/>
+                            <Button x:Name="btnObterCodigo"
+                                    Clicked="btnObterCodigo_Clicked"
+                                    Text="Obter Código" 
+                                    HorizontalOptions="Start"/>
+                        </StackLayout>
 
+                        <Image Source="checkMark_img"
+                               x:Name="imgOk"
+                               VerticalOptions="CenterAndExpand"
+                               HorizontalOptions="EndAndExpand"
+                               Margin="0,0,40,0"/>
+                    </StackLayout>
 
+                    <zxing:ZXingScannerView x:Name="scannerCaixa"
+                        OnScanResult="scannerCaixa_OnScanResult"
+                        HeightRequest="500"
+                        WidthRequest="300"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Fill">
+
+                    </zxing:ZXingScannerView>
+
+                    <zxing:ZXingScannerView x:Name="scannerFerram"
+                        OnScanResult="scannerFerram_OnScanResult"
+                        HeightRequest="500"
+                        WidthRequest="300"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Fill">
+
+                    </zxing:ZXingScannerView>
+
+                    <Frame CornerRadius="40"
+                           HorizontalOptions="Center"
+                           Margin="0,20,0,0"
+                           BackgroundColor="AliceBlue">
+                        <StackLayout>
+                            <Label Text="Adicionar Ferramenta" TextColor="#1713C0" HorizontalTextAlignment="Center" FontSize="20" Margin="0,20,0,10"/>
+
+                            <StackLayout Orientation="Horizontal">
+
+                                <StackLayout HorizontalOptions="Start"
+                                                     WidthRequest="250">
+
+                                    <Label Text="Nome da Ferramenta" TextColor="Black"/>
+                                    <Entry x:Name="txtNome"/>
+
+                                    <Label Text="Código"/>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Button x:Name="btnCodigoFerram"
+                                                Clicked="btnCodigoFerram_Clicked"
+                                                Text="Capturar Código"
+                                                HorizontalOptions="Start"
+                                                CornerRadius="10"/>
+
+                                        <Image x:Name="imgCodigoFerram"
+                                               IsVisible="false"
+                                               Source="checkMark_img"
+                                               HeightRequest="50"
+                                               Margin="20,0"/>
+                                    </StackLayout>
+
+                                    <Label Text="Descrição" TextColor="Black"/>
+                                    <Entry x:Name="txtDescricao"/>
+                                </StackLayout>
+
+                                <StackLayout Margin="25,0,0,0"
+                                                     VerticalOptions="Center">
+
+                                    <Button x:Name="btnAdd"
+                                            Clicked="btnAdd_Clicked"
+                                            WidthRequest="50"
+                                            HeightRequest="50"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            BackgroundColor="Green"
+                                            Margin="0,0,0,10"
+                                            ImageSource="plus48_icon"/>
+
+                                    <Button x:Name="btnApagar"
+                                            Clicked="btnApagar_Clicked"
+                                            WidthRequest="50"
+                                            HeightRequest="50"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            BackgroundColor="Red"
+                                            Margin="0,0,0,10"
+                                            ImageSource="x_icon"/>
+
+                                    <Button x:Name="btnCadastrar"
+                                            Clicked="btnCadastar_Clicked"
+                                            WidthRequest="50"
+                                            HeightRequest="50"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            BackgroundColor="#1713C0"
+                                            Margin="0,0,0,0"
+                                            ImageSource="ok_icon"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+
+                    <ListView x:Name="listaFerramentas"
+                              IsVisible="False"
+                              SeparatorColor="#5BBDFA" 
+                              HasUnevenRows="True" 
+                              Margin="10,20">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <SwipeView>
+                                        <SwipeView.RightItems>
+                                            <SwipeItems>
+                                                <SwipeItem x:Name="btnRemoverItem"
+                                                            Clicked="btnRemoverItem_Clicked"
+                                                            Text="Remover"
+                                                            BackgroundColor="Red"
+                                                            IconImageSource="x_icon"
+                                                            CommandParameter="{Binding .}">
+                                                </SwipeItem>
+                                            </SwipeItems>
+                                        </SwipeView.RightItems>
+
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="30"/>
+                                                <RowDefinition Height="30"/>
+                                            </Grid.RowDefinitions>
+
+                                            <Label Grid.Row="0"
+                                                           Text="{Binding NomeFerramenta}"               
+                                                           TextColor= "#1713C0"
+                                                           VerticalTextAlignment="Center"
+                                                           FontSize="23"/>
+
+                                            <Label Grid.Row="1"
+                                                    Text="{Binding Descricao}"               
+                                                    TextColor= "Black"
+                                                    VerticalTextAlignment="Center"
+                                                    FontSize="18"/>
+                                        </Grid>
+                                    </SwipeView>
+
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
                 </StackLayout>
             </yummy:PancakeView>
         </StackLayout>
-    </ContentPage.Content>
+    </ScrollView>
 </ContentPage>
