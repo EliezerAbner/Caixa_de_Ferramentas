@@ -14,6 +14,7 @@ namespace AppSupervisor.Droid
         {
             base.OnCreate(savedInstanceState);
 
+            Rg.Plugins.Popup.Popup.Init(this);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             Window.SetStatusBarColor(Android.Graphics.Color.ParseColor("#1713C0"));

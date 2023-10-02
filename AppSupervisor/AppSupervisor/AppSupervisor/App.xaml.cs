@@ -13,7 +13,6 @@ namespace AppSupervisor
         {
             InitializeComponent();
 
-            //MainPage = new NavigationPage(new PageLogin());
             MainPage = new NavigationPage(new PageLogin());
         }
 

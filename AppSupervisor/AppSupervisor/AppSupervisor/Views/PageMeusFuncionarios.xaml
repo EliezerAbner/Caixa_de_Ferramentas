@@ -166,7 +166,7 @@
                                             ImageSource="plus_icon"
                                             HeightRequest="80"/>
 
-                                    <Label Text="Cadastrar Caixa de Ferramentas"
+                                    <Label Text="Nova Caixa de Ferramentas"
                                            FontSize="18"
                                            TextColor="Black"
                                            HorizontalTextAlignment="Center"/>

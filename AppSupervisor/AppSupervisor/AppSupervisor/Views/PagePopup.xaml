@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage  xmlns:pages="http://rotorgames.com" 
+                  xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  x:Class="AppSupervisor.Views.PagePopup"
+                  BackgroundClicked="PopupPage_BackgroundClicked"
+                  CloseWhenBackgroundIsClicked="False">
+
+    <StackLayout HorizontalOptions="Center" HeightRequest="300" WidthRequest="300">
+        <Label Text="Teste"/>
+        <Button Text="Fechar" Clicked="Button_Clicked"/>
+    </StackLayout>
+    
+</pages:PopupPage>
