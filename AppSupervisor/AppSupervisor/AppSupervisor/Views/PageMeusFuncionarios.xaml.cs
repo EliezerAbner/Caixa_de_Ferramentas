@@ -79,7 +79,5 @@ namespace AppSupervisor.Views
                 DisplayAlert("Erro", ""+ex.Message+"", "OK");
             }
         }
-
-        
     }
 }

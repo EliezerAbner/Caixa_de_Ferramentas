@@ -16,9 +16,10 @@ namespace AppSupervisor.Views
 	public partial class PageCaixaFerram : ContentPage
 	{
         private List<Ferramenta> lista = new List<Ferramenta>();
-        private string codigoCaixa;
-        private string codigoFerramenta;
-        private int caixaFerramentaId;
+
+        private string codigoFerramenta, codigoCaixa;
+
+        private int caixaFerramentaId, funcionarioId;
 
         public PageCaixaFerram()
         {
@@ -32,17 +33,51 @@ namespace AppSupervisor.Views
             btnApagar.IsEnabled = false;
             btnAdd.IsEnabled = false;
             btnCadastrar.IsEnabled = false;
-
-            scannerCaixa.IsVisible = false;
-            scannerCaixa.IsScanning = false;
-
-            scannerFerram.IsVisible = false;
-            scannerFerram.IsScanning = false;
-
             imgOk.IsVisible = false;
+            imgCodigoFerram.IsVisible = false;
 
             Funcionario funcionario = new Funcionario();
             pickerFuncionarios.ItemsSource = funcionario.ListaFuncionarios(idSupervisor);
+        }
+
+        private async void btnObterCodigo_Clicked(object sender, EventArgs e)
+        {
+            if (pickerFuncionarios.SelectedIndex == -1)
+            {
+                await DisplayAlert("Erro", "A quem pertence a caixa?", "OK");
+            }
+            else
+            {
+                await Navigation.PushAsync(new PageScanner());
+
+                MessagingCenter.Subscribe<PageScanner, string>(this, "ShowError", (view, message) =>
+                {
+                    codigoCaixa = message;
+
+                    try
+                    {
+                        Ferramenta caixa = new Ferramenta();
+                        caixaFerramentaId = caixa.CadastrarCaixa(pickerFuncionarios.SelectedIndex, codigoCaixa);
+                        btnAdd.IsEnabled = true;
+                    }
+                    catch (Exception ex)
+                    {
+                        DisplayAlert("Erro", $"Erro ao cadastrar a caixa. Erro: {ex.Message}", "OK");
+                    }
+                });
+            }
+        }
+
+        private void btnCodigoFerram_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new PageScanner());
+
+            MessagingCenter.Subscribe<PageScanner, string>(this, "ShowError", (view, message) =>
+            {
+                codigoFerramenta = message;
+            });
+
+            btnAdd.IsVisible = true;
         }
 
 
@@ -66,16 +101,13 @@ namespace AppSupervisor.Views
                 btnApagar.IsEnabled = true;
                 btnCadastrar.IsEnabled = true;
 
-                txtNome.Text = "";
-                txtDescricao.Text = "";
+                ApagarCampoFerramenta();
             }
         }
 
         private void btnApagar_Clicked(object sender, EventArgs e)
         {
-            txtDescricao.Text = "";
-            codigoFerramenta = "";
-            txtDescricao.Text = "";
+            ApagarCampoFerramenta();
         }
 
         private async void btnCadastar_Clicked(object sender, EventArgs e)
@@ -84,7 +116,18 @@ namespace AppSupervisor.Views
 
             if (resposta)
             {
-                
+                try
+                {
+                    foreach (Ferramenta ferramenta in lista)
+                    {
+                        Ferramenta cadastro = new Ferramenta();
+                        cadastro.CadastrarFerramenta(ferramenta);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    await DisplayAlert("Erro", $"Erro ao cadastrar as ferramentas: Erro{ex.Message}", "OK");
+                }
             }
         }
 
@@ -98,63 +141,21 @@ namespace AppSupervisor.Views
             listaFerramentas.ItemsSource= lista;
         }
 
-        private void btnObterCodigo_Clicked(object sender, EventArgs e)
+        private void ApagarCampoFerramenta()
         {
-            if(pickerFuncionarios.SelectedIndex == -1)
-            {
-                DisplayAlert("Erro", "A quem pertence a caixa?", "OK");
-            }
-            else
-            {
-                scannerCaixa.IsVisible = true;
-                scannerCaixa.IsScanning = true;
-            }
+            txtDescricao.Text = "";
+            codigoFerramenta = "";
+            txtDescricao.Text = "";
         }
 
-        private void btnCodigoFerram_Clicked(object sender, EventArgs e)
+        private void pickerFuncionarios_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //scannerFerram.IsVisible = true;
-            //scannerFerram.IsScanning = true;
+            Funcionario funcionario = new Funcionario();
+            funcionario = pickerFuncionarios.SelectedItem as Funcionario;
+            funcionarioId = funcionario.Id;
+            pickerFuncionarios.IsEnabled = false;
 
-            btnAdd.IsVisible = true;
+            //toDo = não permitir que o usuario pegue outro funcionario
         }
-
-        private void scannerCaixa_OnScanResult(ZXing.Result result)
-        {
-            Device.BeginInvokeOnMainThread(() =>
-            {
-                Vibration.Vibrate(500);
-                codigoCaixa = result.Text;
-
-                scannerCaixa.IsScanning = false;
-                scannerCaixa.IsVisible = false;
-
-                imgOk.IsVisible = true;
-
-                try
-                {
-                    Ferramenta caixa = new Ferramenta();
-                    caixaFerramentaId = caixa.CadastrarCaixa(pickerFuncionarios.SelectedIndex, result.Text);
-                }
-                catch (Exception ex)
-                {
-                    DisplayAlert("Erro", "Infelizmente não estamos conseguindo cadastrar a caixa. Erro: " + ex.Message + "", "Ok");
-                }
-            });
-            
-        }
-
-        private void scannerFerram_OnScanResult(ZXing.Result result)
-        {
-            Vibration.Vibrate(500);
-            codigoFerramenta = result.Text;
-
-            scannerFerram.IsScanning = false;
-            scannerFerram.IsVisible = false;
-
-            imgCodigoFerram.IsVisible = true;
-        }
-
-        
     }
 }
