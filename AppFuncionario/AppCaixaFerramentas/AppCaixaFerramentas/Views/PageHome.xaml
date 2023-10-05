@@ -3,51 +3,134 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              x:Class="AppCaixaFerramentas.Views.PageHome"
-             BackgroundColor="#AECCF2">
+             NavigationPage.HasNavigationBar="False">
 
-    <ContentPage.Content>
-        <StackLayout x:Name="teste">
+    <ContentPage.Background>
+        <LinearGradientBrush>
+            <GradientStop Color="#1713C0"
+                          Offset="0.1" />
+            <GradientStop Color="#5BBDFA"
+                          Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    
+    <ScrollView>
+        <StackLayout>
+            <StackLayout HeightRequest="200"
+                         HorizontalOptions="CenterAndExpand">
 
-            <StackLayout x:Name="noMessage" IsVisible="False">
-                <Image Source="noMessages2" VerticalOptions="Start" Margin="50" IsAnimationPlaying="True"/>
-                <Label Text="Sem mensagens hoje" HorizontalOptions="Center" TextColor="black" FontSize="18"/>
+                <Label x:Name="lblNome"
+                       Text="Seja bem vindo (a)"
+                       FontSize="25"
+                       TextColor="White"
+                       VerticalOptions="CenterAndExpand"
+                       FontFamily="Gabarito"
+                       FontAttributes="Bold"
+                       Margin="15"/>
+
             </StackLayout>
 
-            <Frame x:Name="frameMensagem"
-                   IsVisible="False"
-                   CornerRadius="45"
-                   BackgroundColor="AliceBlue"
-                   VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="Center"
-                   WidthRequest="300"
-                   HeightRequest="400">
-                
-                <StackLayout>
-                    <Label Text="Mensagem do Dia" TextColor="Black" FontSize="22"/>
-                    <Label x:Name="lblMsg" TextColor="Black" VerticalOptions="CenterAndExpand"/>
+            <yummy:PancakeView BackgroundColor="#F1F5FF"
+                               CornerRadius="40,40,0,0"
+                               VerticalOptions="EndAndExpand">
+                <StackLayout Margin="10">
+                    <StackLayout>
 
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                        <Button x:Name="btnLike"
-                                Clicked="btnLike_Clicked"
-                                CornerRadius="80"
-                                WidthRequest="60"
-                                HeightRequest="60"
-                                BackgroundColor="#023E73"
-                                ImageSource="heart_icon"/>
+                        <StackLayout Orientation="Vertical" HorizontalOptions="Center" Margin="0,40">
 
-                        <Button x:Name="btnShare"
-                                Clicked="btnShare_Clicked"
-                                CornerRadius="80"
-                                WidthRequest="60"
-                                HeightRequest="60"
-                                BackgroundColor="#023E73"
-                                ImageSource="share_icon"/>
-                        
-                        <!-- ToDo: Alterar a cor dos botões-->
-                    </StackLayout>    
+                            <StackLayout Orientation="Horizontal">
+                                <Frame BackgroundColor="White"
+                                       HeightRequest="125"
+                                       WidthRequest="125"
+                                       CornerRadius="18"
+                                       Margin="5">
+
+                                    <StackLayout>
+                                        <Button x:Name="btnNovoFuncionario"
+                                                BackgroundColor="Transparent"
+                                                HorizontalOptions="Fill"
+                                                VerticalOptions="Start"
+                                                ImageSource="person_icon"
+                                                HeightRequest="60"/>
+
+                                        <Label Text="Mensagens"
+                                               FontSize="18"
+                                               TextColor="Black"
+                                               HorizontalTextAlignment="Center"/>
+                                    </StackLayout>
+                                </Frame>
+
+                                <Frame BackgroundColor="White"
+                                       HeightRequest="125"
+                                       WidthRequest="125"
+                                       CornerRadius="18"
+                                       Margin="5">
+
+                                    <StackLayout>
+                                        <Button x:Name="btnListaFuncionario"
+                                                BackgroundColor="Transparent"
+                                                HorizontalOptions="Fill"
+                                                VerticalOptions="Start"
+                                                ImageSource="people_icon"
+                                                HeightRequest="60"/>
+
+                                        <Label Text="Meus Colaboradores"
+                                               FontSize="18"
+                                               TextColor="Black"
+                                               HorizontalTextAlignment="Center"/>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                <Frame BackgroundColor="White"
+                                       HeightRequest="125"
+                                       WidthRequest="125"
+                                       CornerRadius="18"
+                                       Margin="5">
+
+                                    <StackLayout>
+                                        <Button x:Name="btnSair"
+                                                BackgroundColor="Transparent"
+                                                HorizontalOptions="Fill"
+                                                VerticalOptions="Start"
+                                                ImageSource="person_icon"
+                                                HeightRequest="60"/>
+
+                                        <Label Text="Novo Colaborador"
+                                               FontSize="18"
+                                               TextColor="Black"
+                                               HorizontalTextAlignment="Center"/>
+                                    </StackLayout>
+                                </Frame>
+
+                                <Frame BackgroundColor="White"
+                                       HeightRequest="125"
+                                       WidthRequest="125"
+                                       CornerRadius="18"
+                                       Margin="5">
+
+                                    <StackLayout>
+                                        <Button x:Name="btnLogout"
+                                                BackgroundColor="Transparent"
+                                                HorizontalOptions="Fill"
+                                                VerticalOptions="Start"
+                                                ImageSource="people_icon"
+                                                HeightRequest="60"/>
+
+                                        <Label Text="Meus Colaboradores"
+                                               FontSize="18"
+                                               TextColor="Black"
+                                               HorizontalTextAlignment="Center"/>
+                                    </StackLayout>
+                                </Frame>
+
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
                 </StackLayout>
-            </Frame>
+            </yummy:PancakeView>
 
         </StackLayout>
-    </ContentPage.Content>
+    </ScrollView>
 </ContentPage>

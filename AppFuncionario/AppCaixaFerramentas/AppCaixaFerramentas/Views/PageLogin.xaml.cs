@@ -47,7 +47,7 @@ namespace AppCaixaFerramentas.Views
                 if (true) //autorizar
                 {
                     var pagAnterior = Navigation.NavigationStack.LastOrDefault();
-                    Navigation.PushAsync(new MainPage());
+                    Navigation.PushAsync(new PageHome());
                     Navigation.RemovePage(pagAnterior);
                 }
                 else
@@ -57,6 +57,6 @@ namespace AppCaixaFerramentas.Views
             }  
         }
     }
-    //info sobre tabela customizada
+    //info sobre table customizada
     //https://stackoverflow.com/questions/64887786/xamarin-forms-cradle-fab
 }

@@ -3,19 +3,27 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              x:Class="AppCaixaFerramentas.Views.PageLogin"
-             BackgroundColor="#023E73"
              NavigationPage.HasNavigationBar="False">
+    <ContentPage.Background>
+        <LinearGradientBrush>
+            <GradientStop Color="#1713C0"
+                      Offset="0.1" />
+            <GradientStop Color="#5BBDFA"
+                      Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
     <ContentPage.Content>
         <yummy:PancakeView BackgroundColor="White" 
                            CornerRadius="40,40,0,0"
                            HorizontalOptions="FillAndExpand"
                            VerticalOptions="EndAndExpand"
                            HeightRequest="480">
-            
+
             <StackLayout Margin="30">
                 <StackLayout>
                     <Label Text="Login" 
-                           TextColor="#023E73" 
+                           TextColor="#1713C0" 
                            HorizontalTextAlignment="Start" 
                            FontAttributes="Bold" 
                            FontSize="30" 
@@ -24,22 +32,22 @@
 
                 <StackLayout>
                     <Label Text="Insira o email" TextColor="Black"/>
-                    <Entry x:Name="txtEmail" TextColor="Black"/>
+                    <Entry x:Name="txtEmail" Keyboard="Email" TextColor="Black" ReturnType="Next" ClearButtonVisibility="WhileEditing"/>
                 </StackLayout>
 
                 <StackLayout>
                     <Label Text="Insira a senha" TextColor="Black"/>
-                    <Entry x:Name="txtSenha" IsPassword="True" TextColor="Black"/>
+                    <Entry x:Name="txtSenha" IsPassword="True" TextColor="Black" ReturnType="Go" ClearButtonVisibility="WhileEditing"/>
                 </StackLayout>
 
-                <yummy:PancakeView BackgroundColor="#023E73" 
+                <yummy:PancakeView BackgroundColor="#0400B0" 
                                    CornerRadius="40"
                                    VerticalOptions="CenterAndExpand">
                     <yummy:PancakeView.Shadow>
                         <yummy:DropShadow Color="#000000" Offset="10,10" />
                     </yummy:PancakeView.Shadow>
 
-                    <Button Text="TESTE" 
+                    <Button Text="Login" 
                             TextColor="White" 
                             CornerRadius="40" 
                             BackgroundColor="Transparent"

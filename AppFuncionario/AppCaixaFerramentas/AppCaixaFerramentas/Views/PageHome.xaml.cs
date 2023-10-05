@@ -15,39 +15,6 @@ namespace AppCaixaFerramentas.Views
         public PageHome()
         {
             InitializeComponent();
-            Mensagem msgDoDia = new Mensagem();
-
-            try
-            {
-                msgDoDia = msgDoDia.NovaMensagem();
-            }
-            catch (Exception ex)
-            {
-                DisplayAlert("Erro", "" + ex.Message + "", "OK");
-                msgDoDia.Msg = null;
-            }
-
-            if (msgDoDia.Msg != null)
-            {
-                frameMensagem.IsVisible = true;
-                lblMsg.Text = msgDoDia.Msg;
-            }
-            else
-            {
-                noMessage.IsVisible = true;
-            }
-
-          
-        }
-
-        private void btnLike_Clicked(object sender, EventArgs e)
-        {
-            DisplayAlert("Uma Pena", "Ainda estamos trabalhando por aqui. Volte mais tarde", "OK");
-        }
-
-        private void btnShare_Clicked(object sender, EventArgs e)
-        {
-            DisplayAlert("Uma Pena", "Ainda estamos trabalhando por aqui. Volte mais tarde", "OK");
         }
     }
 }

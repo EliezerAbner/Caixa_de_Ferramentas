@@ -125,7 +125,6 @@ C:\Programas\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFer
 C:\Programas\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\AppCaixaFerramentas.csproj.AssemblyReference.cache
 C:\Programas\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\AppCaixaFerramentas.GeneratedMSBuildEditorConfig.editorconfig
 C:\Programas\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\App.xaml.g.cs
-C:\Programas\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
 C:\Programas\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\Views\PageAbout.xaml.g.cs
 C:\Programas\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\Views\PageHome.xaml.g.cs
 C:\Programas\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\Views\PageListaFerramentas.xaml.g.cs
@@ -138,3 +137,4 @@ C:\Programas\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFer
 C:\Programas\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\AppCaixaFerramentas.dll
 C:\Programas\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\refint\AppCaixaFerramentas.dll
 C:\Programas\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\AppCaixaFerramentas.pdb
+C:\Programas\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\Views\PageMensagens.xaml.g.cs

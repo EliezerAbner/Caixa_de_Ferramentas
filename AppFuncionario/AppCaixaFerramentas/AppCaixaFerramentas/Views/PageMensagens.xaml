@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppCaixaFerramentas.Views.PageMensagens">
+    <ContentPage.Content>
+        <StackLayout x:Name="teste">
+
+            <StackLayout x:Name="noMessage" IsVisible="False">
+                <Image Source="noMessages2" VerticalOptions="Start" Margin="50" IsAnimationPlaying="True"/>
+                <Label Text="Sem mensagens hoje" HorizontalOptions="Center" TextColor="black" FontSize="18"/>
+            </StackLayout>
+
+            <Frame x:Name="frameMensagem"
+               IsVisible="False"
+               CornerRadius="45"
+               BackgroundColor="AliceBlue"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"
+               WidthRequest="300"
+               HeightRequest="400">
+
+                <StackLayout>
+                    <Label Text="Mensagem do Dia" TextColor="Black" FontSize="22"/>
+                    <Label x:Name="lblMsg" TextColor="Black" VerticalOptions="CenterAndExpand"/>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Button x:Name="btnLike"
+                            Clicked="btnLike_Clicked"
+                            CornerRadius="80"
+                            WidthRequest="60"
+                            HeightRequest="60"
+                            BackgroundColor="#023E73"
+                            ImageSource="heart_icon"/>
+
+                        <Button x:Name="btnShare"
+                            Clicked="btnShare_Clicked"
+                            CornerRadius="80"
+                            WidthRequest="60"
+                            HeightRequest="60"
+                            BackgroundColor="#023E73"
+                            ImageSource="share_icon"/>
+
+                        <!-- ToDo: Alterar a cor dos botões-->
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
