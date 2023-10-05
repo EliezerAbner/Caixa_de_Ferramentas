@@ -47,7 +47,7 @@ namespace AppSupervisor.Model
         {
             using (MySqlConnection connection = new MySqlConnection(conn))
             {
-                string sql = $"INSERT INTO caixaFerramentas(caixaFerramentasId, nome, codigo, descricao) VALUES({ferramenta.CaixaFerramentaId},'{ferramenta.NomeFerramenta}', '{ferramenta.Codigo}', '{ferramenta.Descricao}')";
+                string sql = $"INSERT INTO ferramenta(caixaFerramentasId, nome, codigo, descricao) VALUES({ferramenta.CaixaFerramentaId},'{ferramenta.NomeFerramenta}', '{ferramenta.Codigo}', '{ferramenta.Descricao}')";
                 connection.Open();
                 using (MySqlCommand cmd = new MySqlCommand(sql, connection))
                 {

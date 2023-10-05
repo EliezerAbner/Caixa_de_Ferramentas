@@ -57,8 +57,9 @@ namespace AppSupervisor.Views
                     try
                     {
                         Ferramenta caixa = new Ferramenta();
-                        caixaFerramentaId = caixa.CadastrarCaixa(pickerFuncionarios.SelectedIndex, codigoCaixa);
+                        caixaFerramentaId = caixa.CadastrarCaixa(funcionarioId, codigoCaixa);
                         btnAdd.IsEnabled = true;
+                        imgOk.IsVisible=true;
                     }
                     catch (Exception ex)
                     {
@@ -128,6 +129,9 @@ namespace AppSupervisor.Views
                 {
                     await DisplayAlert("Erro", $"Erro ao cadastrar as ferramentas: Erro{ex.Message}", "OK");
                 }
+
+                await DisplayAlert("Sucesso", "Ferramentas cadastradas com sucesso", "OK");
+                await Navigation.PopAsync();
             }
         }
 
@@ -143,7 +147,7 @@ namespace AppSupervisor.Views
 
         private void ApagarCampoFerramenta()
         {
-            txtDescricao.Text = "";
+            txtNome.Text = "";
             codigoFerramenta = "";
             txtDescricao.Text = "";
         }
@@ -153,9 +157,12 @@ namespace AppSupervisor.Views
             Funcionario funcionario = new Funcionario();
             funcionario = pickerFuncionarios.SelectedItem as Funcionario;
             funcionarioId = funcionario.Id;
+
             pickerFuncionarios.IsEnabled = false;
 
-            //toDo = não permitir que o usuario pegue outro funcionario
+            //ToDo = não permitir que o supervisor pegue outro funcionario
         }
+
+        
     }
 }
