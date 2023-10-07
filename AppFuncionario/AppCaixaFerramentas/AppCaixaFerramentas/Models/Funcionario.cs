@@ -38,7 +38,7 @@ namespace AppCaixaFerramentas.Models
             }
         }
 
-        public bool Login(Funcionario funcionario)
+        public bool Login()
         {
             try
             {
@@ -60,6 +60,31 @@ namespace AppCaixaFerramentas.Models
             {
                 throw new Exception (ex.Message);
             }
+        }
+
+        public Funcionario buscarFuncionario(string email)
+        {
+            string sql = $"SELECT * FROM funcionario WHERE email='{email}'";
+            Funcionario funcionario = new Funcionario();
+
+
+			using (MySqlConnection con = new MySqlConnection(conn))
+            {
+                con.Open();
+                using (MySqlCommand cmd = new MySqlCommand (sql, con))
+                {
+                    using (MySqlDataReader reader =  cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            funcionario.Id = reader.GetInt32(0);
+                            funcionario.NomeFuncionario = reader.GetString("nomeFuncionario");
+                        }
+                    }
+                }
+                con.Close();
+            }
+            return funcionario;
         }
     }
 }

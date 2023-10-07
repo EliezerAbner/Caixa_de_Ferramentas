@@ -81,12 +81,9 @@ C:\Programas\Caixa_de_Ferramentas\Mobile\AppCaixaFerramentas\AppCaixaFerramentas
 C:\Users\Aluno\source\repos\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\AppCaixaFerramentas.csproj.AssemblyReference.cache
 C:\Users\Aluno\source\repos\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\AppCaixaFerramentas.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Aluno\source\repos\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\App.xaml.g.cs
-C:\Users\Aluno\source\repos\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
 C:\Users\Aluno\source\repos\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\Views\PageAbout.xaml.g.cs
 C:\Users\Aluno\source\repos\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\Views\PageHome.xaml.g.cs
-C:\Users\Aluno\source\repos\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\Views\PageListaFerramentas.xaml.g.cs
 C:\Users\Aluno\source\repos\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\Views\PageLogin.xaml.g.cs
-C:\Users\Aluno\source\repos\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\Views\PageVericacao.xaml.g.cs
 C:\Users\Aluno\source\repos\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\AppCaixaFerramentas.AssemblyInfoInputs.cache
 C:\Users\Aluno\source\repos\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\AppCaixaFerramentas.AssemblyInfo.cs
 C:\Users\Aluno\source\repos\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\AppCaixaFerramentas.csproj.CoreCompileInputs.cache
@@ -125,11 +122,8 @@ C:\Programas\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFer
 C:\Programas\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\AppCaixaFerramentas.csproj.AssemblyReference.cache
 C:\Programas\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\AppCaixaFerramentas.GeneratedMSBuildEditorConfig.editorconfig
 C:\Programas\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\App.xaml.g.cs
-C:\Programas\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\Views\PageAbout.xaml.g.cs
 C:\Programas\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\Views\PageHome.xaml.g.cs
-C:\Programas\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\Views\PageListaFerramentas.xaml.g.cs
 C:\Programas\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\Views\PageLogin.xaml.g.cs
-C:\Programas\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\Views\PageVericacao.xaml.g.cs
 C:\Programas\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\AppCaixaFerramentas.AssemblyInfoInputs.cache
 C:\Programas\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\AppCaixaFerramentas.AssemblyInfo.cs
 C:\Programas\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\AppCaixaFerramentas.csproj.CoreCompileInputs.cache
@@ -138,3 +132,9 @@ C:\Programas\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFer
 C:\Programas\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\refint\AppCaixaFerramentas.dll
 C:\Programas\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\AppCaixaFerramentas.pdb
 C:\Programas\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\Views\PageMensagens.xaml.g.cs
+C:\Users\Aluno\source\repos\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\Views\PageMensagens.xaml.g.cs
+C:\Users\Aluno\source\repos\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\Views\PageFerramentas.xaml.g.cs
+C:\Users\Aluno\source\repos\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\Views\PageScanner.xaml.g.cs
+C:\Programas\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\Views\PageFerramentas.xaml.g.cs
+C:\Programas\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\Views\PageScanner.xaml.g.cs
+C:\Programas\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\Views\PageVerificacao.xaml.g.cs

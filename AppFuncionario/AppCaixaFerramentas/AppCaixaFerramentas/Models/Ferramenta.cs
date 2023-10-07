@@ -9,20 +9,32 @@ namespace AppCaixaFerramentas.Models
     {
         private static string conn = @"server=sql.freedb.tech;port=3306;database=freedb_ferramentasdb;user id=freedb_mobileUser;password=8XJ@vc4g@VW6&pY;charset=utf8";
         public int Id { get; set; }
-        public int FuncionarioId { get; set; }
-        public string NomeFerramenta { get; set; }
-        public string Tipo { get; set; }
+		public int CaixaFerramentaId { get; set; }
+		public string NomeFerramenta { get; set; }
         public string Codigo { get; set; }
-        public bool Verificado { get; set; }
+		public string Descricao { get; set; }
+		public bool Verificado { get; set; }
 
-        public static List<Ferramenta> listaFerramentas(int funcionarioId)
+        public List<Ferramenta> listaFerramentas(int funcionarioId)
         {
             List<Ferramenta> caixaFerramentas = new List<Ferramenta>();
-            string sql = "SELECT * FROM ferramenta WHERE funcionarioId="+ funcionarioId + "";
+            int caixaFerramentaId;
 
             using (MySqlConnection con = new MySqlConnection(conn))
             {
-                con.Open();
+                string sql = $"SELECT caixaFerramentasId FROM caixaFerramentas WHERE funcionarioId={funcionarioId}";
+				con.Open();
+                using (MySqlCommand cmd = new MySqlCommand(sql, con))
+                {
+                    caixaFerramentaId = (int)cmd.ExecuteScalar();
+                }
+                con.Close();
+            }
+
+			using (MySqlConnection con = new MySqlConnection(conn))
+            {
+				string sql = $"SELECT * FROM ferramenta WHERE caixaFerramentasId={caixaFerramentaId}";
+				con.Open();
                 using (MySqlCommand cmd = new MySqlCommand(sql, con))
                 {
                     using (MySqlDataReader reader = cmd.ExecuteReader())
@@ -32,10 +44,10 @@ namespace AppCaixaFerramentas.Models
                             Ferramenta ferramenta = new Ferramenta()
                             {
                                 Id = reader.GetInt16(0),
-                                FuncionarioId = reader.GetInt32(1),
+                                CaixaFerramentaId = reader.GetInt32(1),
                                 NomeFerramenta = reader.GetString(2),
-                                Tipo = reader.GetString(3),
-                                Codigo = reader.GetString(4),
+                                Codigo = reader.GetString(3),
+                                Descricao = reader.GetString(4),
                                 Verificado = false
                             };
                             caixaFerramentas.Add(ferramenta);

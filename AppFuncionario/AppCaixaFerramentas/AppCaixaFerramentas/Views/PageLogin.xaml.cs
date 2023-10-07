@@ -47,7 +47,7 @@ namespace AppCaixaFerramentas.Views
                 if (true) //autorizar
                 {
                     var pagAnterior = Navigation.NavigationStack.LastOrDefault();
-                    Navigation.PushAsync(new PageHome());
+                    Navigation.PushAsync(new PageHome("p@teste.com"));
                     Navigation.RemovePage(pagAnterior);
                 }
                 else

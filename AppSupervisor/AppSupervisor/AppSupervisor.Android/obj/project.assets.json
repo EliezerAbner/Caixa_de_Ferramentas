@@ -4125,24 +4125,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\eliez\\.nuget\\packages\\": {},
+    "C:\\Users\\Aluno\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Programas\\Caixa_de_Ferramentas\\AppSupervisor\\AppSupervisor\\AppSupervisor.Android\\AppSupervisor.Android.csproj",
+      "projectUniqueName": "C:\\Users\\Aluno\\source\\repos\\Caixa_de_Ferramentas\\AppSupervisor\\AppSupervisor\\AppSupervisor.Android\\AppSupervisor.Android.csproj",
       "projectName": "AppSupervisor.Android",
-      "projectPath": "C:\\Programas\\Caixa_de_Ferramentas\\AppSupervisor\\AppSupervisor\\AppSupervisor.Android\\AppSupervisor.Android.csproj",
-      "packagesPath": "C:\\Users\\eliez\\.nuget\\packages\\",
-      "outputPath": "C:\\Programas\\Caixa_de_Ferramentas\\AppSupervisor\\AppSupervisor\\AppSupervisor.Android\\obj\\",
+      "projectPath": "C:\\Users\\Aluno\\source\\repos\\Caixa_de_Ferramentas\\AppSupervisor\\AppSupervisor\\AppSupervisor.Android\\AppSupervisor.Android.csproj",
+      "packagesPath": "C:\\Users\\Aluno\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Aluno\\source\\repos\\Caixa_de_Ferramentas\\AppSupervisor\\AppSupervisor\\AppSupervisor.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\eliez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Aluno\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4156,8 +4156,8 @@
       "frameworks": {
         "monoandroid13.0": {
           "projectReferences": {
-            "C:\\Programas\\Caixa_de_Ferramentas\\AppSupervisor\\AppSupervisor\\AppSupervisor\\AppSupervisor.csproj": {
-              "projectPath": "C:\\Programas\\Caixa_de_Ferramentas\\AppSupervisor\\AppSupervisor\\AppSupervisor\\AppSupervisor.csproj"
+            "C:\\Users\\Aluno\\source\\repos\\Caixa_de_Ferramentas\\AppSupervisor\\AppSupervisor\\AppSupervisor\\AppSupervisor.csproj": {
+              "projectPath": "C:\\Users\\Aluno\\source\\repos\\Caixa_de_Ferramentas\\AppSupervisor\\AppSupervisor\\AppSupervisor\\AppSupervisor.csproj"
             }
           }
         }

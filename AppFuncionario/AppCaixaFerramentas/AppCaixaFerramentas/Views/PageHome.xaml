@@ -20,7 +20,7 @@
                          HorizontalOptions="CenterAndExpand">
 
                 <Label x:Name="lblNome"
-                       Text="Seja bem vindo (a)"
+                       Text="Seja bem vindo (a) "
                        FontSize="25"
                        TextColor="White"
                        VerticalOptions="CenterAndExpand"
@@ -46,14 +46,16 @@
                                        Margin="5">
 
                                     <StackLayout>
-                                        <Button x:Name="btnNovoFuncionario"
+                                        <Button x:Name="btnMensagens"
                                                 BackgroundColor="Transparent"
                                                 HorizontalOptions="Fill"
                                                 VerticalOptions="Start"
-                                                ImageSource="person_icon"
+                                                ImageSource="announcement_icon"
                                                 HeightRequest="60"/>
 
                                         <Label Text="Mensagens"
+                                               VerticalOptions="EndAndExpand"
+                                               VerticalTextAlignment="Start"
                                                FontSize="18"
                                                TextColor="Black"
                                                HorizontalTextAlignment="Center"/>
@@ -67,16 +69,18 @@
                                        Margin="5">
 
                                     <StackLayout>
-                                        <Button x:Name="btnListaFuncionario"
+                                        <Button x:Name="btnListaFerramentas"
+                                                Clicked="btnListaFerramentas_Clicked"
                                                 BackgroundColor="Transparent"
                                                 HorizontalOptions="Fill"
                                                 VerticalOptions="Start"
-                                                ImageSource="people_icon"
+                                                ImageSource="tools_icon"
                                                 HeightRequest="60"/>
 
-                                        <Label Text="Meus Colaboradores"
+                                        <Label Text="Minhas Ferramentas"
                                                FontSize="18"
                                                TextColor="Black"
+                                               VerticalOptions="EndAndExpand"
                                                HorizontalTextAlignment="Center"/>
                                     </StackLayout>
                                 </Frame>
@@ -90,16 +94,18 @@
                                        Margin="5">
 
                                     <StackLayout>
-                                        <Button x:Name="btnSair"
+                                        <Button x:Name="btnVerificacao"
+                                                Clicked="btnVerificacao_Clicked"
                                                 BackgroundColor="Transparent"
                                                 HorizontalOptions="Fill"
                                                 VerticalOptions="Start"
-                                                ImageSource="person_icon"
+                                                ImageSource="lupa_icon"
                                                 HeightRequest="60"/>
 
-                                        <Label Text="Novo Colaborador"
+                                        <Label Text="Fazer Verificação"
                                                FontSize="18"
                                                TextColor="Black"
+                                               VerticalOptions="EndAndExpand"
                                                HorizontalTextAlignment="Center"/>
                                     </StackLayout>
                                 </Frame>
@@ -112,15 +118,44 @@
 
                                     <StackLayout>
                                         <Button x:Name="btnLogout"
+                                                Clicked="btnLogout_Clicked"
                                                 BackgroundColor="Transparent"
                                                 HorizontalOptions="Fill"
                                                 VerticalOptions="Start"
-                                                ImageSource="people_icon"
+                                                ImageSource="exit_icon"
                                                 HeightRequest="60"/>
 
-                                        <Label Text="Meus Colaboradores"
+                                        <Label Text="Logout"
                                                FontSize="18"
                                                TextColor="Black"
+                                               VerticalOptions="EndAndExpand"
+                                               HorizontalTextAlignment="Center"/>
+                                    </StackLayout>
+                                </Frame>
+
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                
+                                <Frame BackgroundColor="White"
+                                       HeightRequest="125"
+                                       WidthRequest="125"
+                                       CornerRadius="18"
+                                       Margin="5">
+
+                                    <StackLayout>
+                                        <Button x:Name="btnSair"
+                                                Clicked="btnSair_Clicked"
+                                                BackgroundColor="Transparent"
+                                                HorizontalOptions="Fill"
+                                                VerticalOptions="Start"
+                                                ImageSource="power_icon"
+                                                HeightRequest="60"/>
+
+                                        <Label Text="Sair"
+                                               FontSize="18"
+                                               TextColor="Black"
+                                               VerticalOptions="EndAndExpand"
                                                HorizontalTextAlignment="Center"/>
                                     </StackLayout>
                                 </Frame>

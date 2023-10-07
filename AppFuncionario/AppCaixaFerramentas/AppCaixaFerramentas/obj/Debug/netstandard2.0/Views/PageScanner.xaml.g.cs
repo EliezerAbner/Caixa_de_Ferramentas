@@ -8,21 +8,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("AppCaixaFerramentas.Views.PageVericacao.xaml", "Views/PageVericacao.xaml", typeof(global::AppCaixaFerramentas.Views.PageVericacao))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("AppCaixaFerramentas.Views.PageScanner.xaml", "Views/PageScanner.xaml", typeof(global::AppCaixaFerramentas.Views.PageScanner))]
 
 namespace AppCaixaFerramentas.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\PageVericacao.xaml")]
-    public partial class PageVericacao : global::Xamarin.Forms.ContentPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\PageScanner.xaml")]
+    public partial class PageScanner : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Label lbl;
+        private global::ZXing.Net.Mobile.Forms.ZXingScannerView scanner;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(PageVericacao));
-            lbl = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "lbl");
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(PageScanner));
+            scanner = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::ZXing.Net.Mobile.Forms.ZXingScannerView>(this, "scanner");
         }
     }
 }
