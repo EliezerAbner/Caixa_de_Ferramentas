@@ -5,9 +5,8 @@ using MySqlConnector;
 
 namespace AppCaixaFerramentas.Models
 {
-    class Mensagem
+    class Mensagem : Conexao
     {
-        private static string conn = @"server=sql.freedb.tech;port=3306;database=freedb_ferramentasdb;user id=freedb_mobileUser;password=8XJ@vc4g@VW6&pY;charset=utf8";
         public int MsgId { get; set; }
         public string Msg { get; set; }
         public DateTime MsgData { get; set; }

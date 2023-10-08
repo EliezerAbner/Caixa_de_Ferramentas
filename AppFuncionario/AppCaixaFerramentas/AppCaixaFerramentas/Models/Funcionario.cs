@@ -6,9 +6,8 @@ using System.Text;
 
 namespace AppCaixaFerramentas.Models
 {
-    class Funcionario
+    class Funcionario : Conexao
     {
-        private static string conn = @"server=sql.freedb.tech;port=3306;database=freedb_ferramentasdb;user id=freedb_mobileUser;password=8XJ@vc4g@VW6&pY;charset=utf8";
         private string senha;
 
         public string Senha

@@ -136,5 +136,5 @@ C:\Users\Aluno\source\repos\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramen
 C:\Users\Aluno\source\repos\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\Views\PageFerramentas.xaml.g.cs
 C:\Users\Aluno\source\repos\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\Views\PageScanner.xaml.g.cs
 C:\Programas\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\Views\PageFerramentas.xaml.g.cs
-C:\Programas\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\Views\PageScanner.xaml.g.cs
 C:\Programas\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\Views\PageVerificacao.xaml.g.cs
+C:\Programas\Caixa_de_Ferramentas\AppFuncionario\AppCaixaFerramentas\AppCaixaFerramentas\obj\Debug\netstandard2.0\Views\ScannerPage.xaml.g.cs

@@ -31,61 +31,84 @@
 
                 <StackLayout>
 
-                    <Frame Margin="10,20,10,10"
-                           CornerRadius="20">
+                    <StackLayout VerticalOptions="Start" 
+                                 HorizontalOptions="Start" 
+                                 Orientation="Horizontal"
+                                 Margin="12,30">
 
-                        <StackLayout VerticalOptions="Start" HorizontalOptions="Start">
-                            <StackLayout Orientation="Horizontal">
+                        <Frame CornerRadius="20" 
+                               HorizontalOptions="Center" 
+                               Margin="0,0,12,0">
+                            
+                            <StackLayout>
+                                <Label Text="Ferramentas Verificadas"
+                                       TextColor="#999999"
+                                       FontSize="16"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Center"/>
+                                
                                 <Label x:Name="lblFerramVerif" 
-                                       Text="X"
+                                       Text="XX"
                                        TextColor="#1713C0"
                                        FontSize="20"
-                                       VerticalTextAlignment="Center"/>
-                                <Label Text=" Ferramentas Verificadas"
-                                       TextColor="Black"
-                                       FontSize="20"
-                                       VerticalTextAlignment="Center"/>
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Center"/>
                             </StackLayout>
-                            <StackLayout Orientation="Horizontal">
-                                <Label x:Name="lblFerramNnVerif"
-                                       Text="X"
-                                       TextColor="#1713C0"
-                                       FontSize="20"
-                                       VerticalTextAlignment="Center"/>
-                                <Label Text=" Ferramentas Não Verificadas"
-                                       TextColor="Black"
-                                       FontSize="20"
-                                       VerticalTextAlignment="Center"/>
-                            </StackLayout>
+                        </Frame>
 
-                        </StackLayout>
-                    </Frame>
+                        <Frame CornerRadius="20" 
+                               HorizontalOptions="Center">
+
+                            <StackLayout>
+                                <Label Text="Ferramentas Não Verificadas"
+                                       TextColor="#999999"
+                                       FontSize="16"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Center"/>
+
+                                <Label x:Name="lblFerramNnVerif"
+                                       Text="XX"
+                                       TextColor="#1713C0"
+                                       FontSize="20"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Center"/>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Button x:Name="btnVerificar"
+                                Clicked="btnVerificar_Clicked"
+                                ImageSource="qrCode_icon"
+                                Text="Verificar"
+                                CornerRadius="20"
+                                Margin="10,0,12,0"
+                                BackgroundColor="#5BBDFA"
+                                HorizontalOptions="Center"/>
+
+                        <Button x:Name="btnFinalizar"
+                                Clicked="btnFinalizar_Clicked"
+                                Text="Finalizar Verificação"
+                                CornerRadius="20"
+                                BackgroundColor="#1713C0"
+                                HorizontalOptions="Center"/>
+                    </StackLayout>
 
                     <Label Text="Ferramentas não Verificadas"
                            TextColor="#1713C0"
                            HorizontalOptions="Center"
-                           Margin="10,30"
+                           Margin="10,20"
                            FontSize="20"/>
 
-                    <ListView x:Name="lista" 
-                              SeparatorColor="#5BBDFA" 
-                              HasUnevenRows="True" 
-                              IsPullToRefreshEnabled="True"
-                              Margin="7,40">
+                    <ListView x:Name="listaNVerificada" 
+                              SeparatorColor="#5BBDFA"
+                              HeightRequest="300"
+                              Margin="7,0"
+                              RowHeight="70">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
                                     <Grid>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="30"/>
-                                            <RowDefinition Height="30"/>
-                                        </Grid.RowDefinitions>
-
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="200"/>
-                                            <ColumnDefinition Width="200"/>
-                                        </Grid.ColumnDefinitions>
-
                                         <Label Grid.Row="0"
                                            Text="{Binding NomeFerramenta}"               
                                            TextColor= "Black"
@@ -106,13 +129,13 @@
                     <Label Text="Ferramentas Verificadas"
                            TextColor="#1713C0"
                            HorizontalOptions="Center"
-                           Margin="10,30"
+                           Margin="10,20"
                            FontSize="20"/>
 
                     <ListView x:Name="listaVerificada" 
                               SeparatorColor="#5BBDFA" 
                               HasUnevenRows="True" 
-                              Margin="7,40">
+                              Margin="7,0">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>

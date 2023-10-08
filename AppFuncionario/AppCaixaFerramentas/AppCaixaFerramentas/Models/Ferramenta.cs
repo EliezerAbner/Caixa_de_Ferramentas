@@ -5,9 +5,8 @@ using System.Text;
 
 namespace AppCaixaFerramentas.Models
 {
-    class Ferramenta
+    class Ferramenta : Conexao
     {
-        private static string conn = @"server=sql.freedb.tech;port=3306;database=freedb_ferramentasdb;user id=freedb_mobileUser;password=8XJ@vc4g@VW6&pY;charset=utf8";
         public int Id { get; set; }
 		public int CaixaFerramentaId { get; set; }
 		public string NomeFerramenta { get; set; }
@@ -57,28 +56,6 @@ namespace AppCaixaFerramentas.Models
                 con.Close();
                 return caixaFerramentas;
             }
-        }
-
-        public void FazerVerificacao(int ferramentaId, int funcionarioId)
-        {
-            try
-            {
-                using (MySqlConnection con = new MySqlConnection(conn))
-                {
-                    string sql = "";
-                    con.Open();
-                    using (MySqlCommand cmd = new MySqlCommand(sql, con))
-                    {
-                        cmd.ExecuteNonQuery();
-                    }
-                    con.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-
         }
 
         public string BuscarFerramenta(string codigo) 

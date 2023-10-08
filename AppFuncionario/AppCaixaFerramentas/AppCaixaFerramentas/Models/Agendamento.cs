@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AppCaixaFerramentas.Models
 {
-    class Agendamento
+    class Agendamento : Conexao
     {
         public int agendamentoId { get; set; }
         public DateTime dataVerificacao { get; set; }

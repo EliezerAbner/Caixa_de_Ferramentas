@@ -8,20 +8,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("AppCaixaFerramentas.Views.PageScanner.xaml", "Views/PageScanner.xaml", typeof(global::AppCaixaFerramentas.Views.PageScanner))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("AppCaixaFerramentas.Views.ScannerPage.xaml", "Views/ScannerPage.xaml", typeof(global::AppCaixaFerramentas.Views.ScannerPage))]
 
 namespace AppCaixaFerramentas.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\PageScanner.xaml")]
-    public partial class PageScanner : global::Xamarin.Forms.ContentPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\ScannerPage.xaml")]
+    public partial class ScannerPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::ZXing.Net.Mobile.Forms.ZXingScannerView scanner;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(PageScanner));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(ScannerPage));
             scanner = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::ZXing.Net.Mobile.Forms.ZXingScannerView>(this, "scanner");
         }
     }
