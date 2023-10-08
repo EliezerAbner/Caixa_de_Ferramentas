@@ -22,6 +22,11 @@ namespace AppCaixaFerramentas.Views
 			
 			funcionarioId = funcionario.Id;
 			lblNome.Text = $"{lblNome.Text} {funcionario.NomeFuncionario}";
+
+			Mensagem msgDoDia = new Mensagem();
+
+			//frameMsg;
+			//layoutVerificacao;
         }
 
 		private void btnListaFerramentas_Clicked(object sender, EventArgs e)
