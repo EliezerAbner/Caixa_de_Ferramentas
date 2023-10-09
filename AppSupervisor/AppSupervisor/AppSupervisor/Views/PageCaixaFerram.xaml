@@ -38,7 +38,7 @@
                                 TextColor="Black"
                                 TitleColor="Black"
                                 ItemDisplayBinding="{Binding NomeFuncionario}"
-                                SelectedIndexChanged="pickerFuncionarios_SelectedIndexChanged">
+                                SelectedIndexChanged="PickerFuncionarios_SelectedIndexChanged">
                         </Picker>
                     </StackLayout>
 
@@ -46,7 +46,7 @@
                         <StackLayout>
                             <Label Text="Código da caixa" TextColor="Black"/>
                             <Button x:Name="btnObterCodigo"
-                                    Clicked="btnObterCodigo_Clicked"
+                                    Clicked="BtnObterCodigo_Clicked"
                                     Text="Obter Código" 
                                     HorizontalOptions="Start"/>
                         </StackLayout>
@@ -60,11 +60,12 @@
 
                     
 
-                    <Frame CornerRadius="40"
+                    <yummy:PancakeView CornerRadius="40"
                            HorizontalOptions="Center"
                            Margin="3,20"
-                           BackgroundColor="#DFDFF7">
-                        <StackLayout>
+                           BackgroundColor="White"
+                           Shadow="{yummy:ShadowMarkup Color=#FF0000, Offset='10,10'}">
+                        <StackLayout Margin="10">
                             <Label Text="Adicionar Ferramenta" TextColor="#1713C0" HorizontalTextAlignment="Center" FontSize="20" Margin="0,20,0,10"/>
 
                             <StackLayout Orientation="Horizontal">
@@ -78,7 +79,7 @@
                                     <Label Text="Código" TextColor="Black"/>
                                     <StackLayout Orientation="Horizontal">
                                         <Button x:Name="btnCodigoFerram"
-                                                Clicked="btnCodigoFerram_Clicked"
+                                                Clicked="BtnCodigoFerram_Clicked"
                                                 Margin="5"
                                                 Text="Capturar Código"
                                                 HorizontalOptions="Start"
@@ -99,7 +100,7 @@
                                                      VerticalOptions="Center">
 
                                     <Button x:Name="btnAdd"
-                                            Clicked="btnAdd_Clicked"
+                                            Clicked="BtnAdd_Clicked"
                                             WidthRequest="50"
                                             HeightRequest="50"
                                             HorizontalOptions="Center"
@@ -109,7 +110,7 @@
                                             ImageSource="plus48_icon"/>
 
                                     <Button x:Name="btnApagar"
-                                            Clicked="btnApagar_Clicked"
+                                            Clicked="BtnApagar_Clicked"
                                             WidthRequest="50"
                                             HeightRequest="50"
                                             HorizontalOptions="Center"
@@ -119,7 +120,7 @@
                                             ImageSource="x_icon"/>
 
                                     <Button x:Name="btnCadastrar"
-                                            Clicked="btnCadastar_Clicked"
+                                            Clicked="BtnCadastar_Clicked"
                                             WidthRequest="50"
                                             HeightRequest="50"
                                             HorizontalOptions="Center"
@@ -130,7 +131,7 @@
                                 </StackLayout>
                             </StackLayout>
                         </StackLayout>
-                    </Frame>
+                    </yummy:PancakeView>
 
                     <ListView x:Name="listaFerramentas"
                               IsVisible="False"
@@ -145,7 +146,7 @@
                                         <SwipeView.RightItems>
                                             <SwipeItems>
                                                 <SwipeItem x:Name="btnRemoverItem"
-                                                            Clicked="btnRemoverItem_Clicked"
+                                                            Clicked="BtnRemoverItem_Clicked"
                                                             Text="Remover"
                                                             BackgroundColor="Red"
                                                             IconImageSource="x_icon"

@@ -5,7 +5,12 @@ VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppSupervisor.Android", "AppSupervisor.Android\AppSupervisor.Android.csproj", "{749F4164-AA87-434B-B0F3-58A985CF80E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppSupervisor", "AppSupervisor\AppSupervisor.csproj", "{F07A848B-000B-427B-9134-65815572E8FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppSupervisor", "AppSupervisor\AppSupervisor.csproj", "{F07A848B-000B-427B-9134-65815572E8FE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{929E60ED-9540-40A3-8A69-4DF06E567789}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

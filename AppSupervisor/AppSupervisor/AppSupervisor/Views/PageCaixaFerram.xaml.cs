@@ -40,7 +40,7 @@ namespace AppSupervisor.Views
             pickerFuncionarios.ItemsSource = funcionario.ListaFuncionarios(idSupervisor);
         }
 
-        private async void btnObterCodigo_Clicked(object sender, EventArgs e)
+        private async void BtnObterCodigo_Clicked(object sender, EventArgs e)
         {
             if (pickerFuncionarios.SelectedIndex == -1)
             {
@@ -69,7 +69,7 @@ namespace AppSupervisor.Views
             }
         }
 
-        private void btnCodigoFerram_Clicked(object sender, EventArgs e)
+        private void BtnCodigoFerram_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new PageScanner());
 
@@ -82,7 +82,7 @@ namespace AppSupervisor.Views
         }
 
 
-        private void btnAdd_Clicked(object sender, EventArgs e)
+        private void BtnAdd_Clicked(object sender, EventArgs e)
         {
             if (txtNome != null)
             {
@@ -106,12 +106,12 @@ namespace AppSupervisor.Views
             }
         }
 
-        private void btnApagar_Clicked(object sender, EventArgs e)
+        private void BtnApagar_Clicked(object sender, EventArgs e)
         {
             ApagarCampoFerramenta();
         }
 
-        private async void btnCadastar_Clicked(object sender, EventArgs e)
+        private async void BtnCadastar_Clicked(object sender, EventArgs e)
         {
             bool resposta = await DisplayAlert("Cadastrar Ferramentas", "Deseja cadastrar as ferramentas listadas?", "Sim", "Não");
 
@@ -135,7 +135,7 @@ namespace AppSupervisor.Views
             }
         }
 
-        private void btnRemoverItem_Clicked(object sender, EventArgs e)
+        private void BtnRemoverItem_Clicked(object sender, EventArgs e)
         {
             var removerBtn = sender as MenuItem;
             var ferramenta = removerBtn.CommandParameter as Ferramenta;
@@ -152,7 +152,7 @@ namespace AppSupervisor.Views
             txtDescricao.Text = "";
         }
 
-        private void pickerFuncionarios_SelectedIndexChanged(object sender, EventArgs e)
+        private void PickerFuncionarios_SelectedIndexChanged(object sender, EventArgs e)
         {
             Funcionario funcionario = new Funcionario();
             funcionario = pickerFuncionarios.SelectedItem as Funcionario;

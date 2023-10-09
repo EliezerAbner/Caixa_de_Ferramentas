@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppSupervisor.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,15 @@ namespace AppSupervisor.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class PageVerificacoes : ContentPage
 	{
-		public PageVerificacoes ()
+		private int idSupervisor;
+		public PageVerificacoes (int idObtido)
 		{
 			InitializeComponent ();
-		}
+
+			idSupervisor = idObtido;
+
+			Agendamento agendamento = new Agendamento ();
+			pickerAgendamentos.ItemsSource = agendamento.ListaAgendamentos(idObtido);
+        }
 	}
 }

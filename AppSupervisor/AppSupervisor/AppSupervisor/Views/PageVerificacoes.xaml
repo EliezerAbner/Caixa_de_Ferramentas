@@ -1,10 +1,68 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppSupervisor.Views.PageVerificacoes">
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="AppSupervisor.Views.PageVerificacoes"
+             NavigationPage.HasNavigationBar="False">
+    
+    <ContentPage.Background>
+        <LinearGradientBrush>
+            <GradientStop Color="#1713C0"
+              Offset="0.1" />
+            <GradientStop Color="#5BBDFA"
+              Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Verificações" />
+        <StackLayout VerticalOptions="Fill">
+            <StackLayout HeightRequest="80">
+                <Label Text="Verificações"
+                   TextColor="White"
+                   FontSize="23"
+                   Margin="5,25,0,5"
+                   HorizontalOptions="StartAndExpand"/>
+            </StackLayout>
+
+            <yummy:PancakeView BackgroundColor="#F1F5FF"
+                       CornerRadius="30,30,0,0"
+                       VerticalOptions="FillAndExpand">
+
+                <StackLayout Margin="10,30">
+                    <Label Text="Selecione um agendamento especifico"
+                           TextColor="Black"/>
+
+                    <yummy:PancakeView Border="{yummy:BorderMarkup Color=#000000, Thickness='1'}">
+                        <Picker ItemDisplayBinding="{Binding AgendamentoId, StringFormat='Agendamento {0}'}"
+                                x:Name="pickerAgendamentos"
+                                TextColor="Black"/>
+                    </yummy:PancakeView>
+
+                    <Grid Margin="5,20">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="160"/>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="80"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Label Text="Nome"
+                               TextColor="Black"/>
+
+                        <Label Text="n Ferramentas"
+                               Grid.Column="1"
+                               TextColor="Black"/>
+
+                        <Label Text="Ferram. Verificadas"
+                               Grid.Column="2"
+                               TextColor="Black"/>
+                    </Grid>
+
+                    <ListView Margin="0,20">
+                        
+                    </ListView>
+                </StackLayout>
+            </yummy:PancakeView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

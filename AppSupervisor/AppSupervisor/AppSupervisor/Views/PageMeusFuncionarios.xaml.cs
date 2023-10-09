@@ -13,19 +13,18 @@ namespace AppSupervisor.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class PageMeusFuncionarios : ContentPage
 	{
-        private int idSupervisor = 2;
+        private int idSupervisor;
 
-		public PageMeusFuncionarios()
+		public PageMeusFuncionarios(string emailObtido)
 		{
 			InitializeComponent ();
 
-		}
+            Supervisor supervisor = new Supervisor();
+            supervisor = supervisor.BuscarNome(emailObtido);
+            idSupervisor = supervisor.SupervisorId;
 
-        public PageMeusFuncionarios(int idObtido)
-        {
-            InitializeComponent();
-            //idSupervisor = idObtido;
-        }
+            lblNome.Text = $"{lblNome.Text} {supervisor.Nome}";
+		}
 
         private void btnNovoFuncionario_Clicked(object sender, EventArgs e)
         {
@@ -44,12 +43,12 @@ namespace AppSupervisor.Views
 
         private void btnChecarVerificacoes_Clicked(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new PageVerificacoes(idSupervisor));
         }
 
         private void btnAgendar_Clicked(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new PageAgendar(idSupervisor));
         }
 
         private void btnNovoAnuncio_Clicked(object sender, EventArgs e)

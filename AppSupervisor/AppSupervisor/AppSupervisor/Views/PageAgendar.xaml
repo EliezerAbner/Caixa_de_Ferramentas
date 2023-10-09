@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="AppSupervisor.Views.PageAgendar"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Background>
+        <LinearGradientBrush>
+            <GradientStop Color="#1713C0"
+                  Offset="0.1" />
+            <GradientStop Color="#5BBDFA"
+                  Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Fill">
+            <StackLayout HeightRequest="80">
+                <Label Text="Agendar Verificações"
+                       TextColor="White"
+                       FontSize="23"
+                       Margin="5,25,0,5"
+                       HorizontalOptions="StartAndExpand"/>
+            </StackLayout>
+
+            <yummy:PancakeView BackgroundColor="#F1F5FF"
+                           CornerRadius="30,30,0,0"
+                           VerticalOptions="FillAndExpand">
+
+                <StackLayout Margin="10,40">
+                    <Label Text="De:" 
+                           TextColor="#1713C0"
+                           FontSize="18"/>
+
+                    <DatePicker x:Name="dpDataInicial"
+                                DateSelected="DpDataInicial_DateSelected"
+                                Format="D"
+                                TextColor="Black"
+                                Margin="10,0"/>
+
+                    <yummy:PancakeView Margin="20"
+                                       CornerRadius="20,0,0,20"
+                                       BackgroundColor="White"
+                                       WidthRequest="250"
+                                       HorizontalOptions="StartAndExpand"
+                                       Shadow="{yummy:ShadowMarkup Color=#FF0000, Offset='10,10'}">
+
+                        <StackLayout Margin="10">
+                            <Label Text=" Hora de Inicio"
+                                   TextColor="Black"/>
+
+                            <TimePicker x:Name="tpHoraInicial"
+                                        TextColor="Black"
+                                        Margin="50,0"/>
+                        </StackLayout>
+                    </yummy:PancakeView>
+
+                    <Label Text="Até:" 
+                           TextColor="#1713C0"
+                           FontSize="18"/>
+
+                    <DatePicker x:Name="dpDataFinal"
+                                Format="D"
+                                MinimumDate="{Binding Source={x:Reference dpDataInicial}, Path=Date}"
+                                TextColor="Black"
+                                Margin="10,0"/>
+
+                    <yummy:PancakeView Margin="20"
+                                       CornerRadius="20,0,0,20"
+                                       BackgroundColor="White"
+                                       WidthRequest="250"
+                                       HorizontalOptions="StartAndExpand"
+                                       Shadow="{yummy:ShadowMarkup Color=#FF0000, Offset='10,10'}">
+
+                        <StackLayout Margin="10">
+                            <Label Text=" Hora Final"
+                                   TextColor="Black"/>
+
+                            <TimePicker x:Name="tpHoraFinal"
+                                        TextColor="Black"
+                                        Margin="50,0"/>
+                        </StackLayout>
+                    </yummy:PancakeView>
+
+                    <StackLayout Orientation="Horizontal" Margin="30,20" HorizontalOptions="Center">
+
+                        <Button x:Name="btnCancelar"
+                                Clicked="BtnCancelar_Clicked"
+                                TextColor="White"
+                                Text="Cancelar"
+                                CornerRadius="30"/>
+
+                        <Button x:Name="btnCadastar"
+                                Clicked="BtnCadastar_Clicked"
+                                TextColor="White"
+                                BackgroundColor="#1713C0"
+                                Text="Cadastrar"
+                                CornerRadius="30"/>
+                    </StackLayout>
+                </StackLayout>
+            </yummy:PancakeView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

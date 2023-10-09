@@ -75,9 +75,7 @@ namespace AppSupervisor.Views
 
         private void btnCancelar_Clicked(object sender, EventArgs e)
         {
-            var pagAnterior = Navigation.NavigationStack.LastOrDefault();
-            Navigation.PushAsync(new PageMeusFuncionarios());
-            Navigation.RemovePage(pagAnterior);
+            Navigation.PopAsync();
         }
 
         private void btnCadastar_Clicked(object sender, EventArgs e)
@@ -127,9 +125,7 @@ namespace AppSupervisor.Views
                     }
                 }
 
-                var pagAnterior = Navigation.NavigationStack.LastOrDefault();
-                Navigation.PushAsync(new PageMeusFuncionarios());
-                Navigation.RemovePage(pagAnterior);
+                Navigation.PopAsync();
             }
             else
             {

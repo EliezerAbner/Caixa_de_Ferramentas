@@ -19,7 +19,7 @@
                          HorizontalOptions="CenterAndExpand">
 
                 <Label x:Name="lblNome"
-                       Text="Seja bem vindo (a)"
+                       Text="Seja bem vindo (a) "
                        FontSize="25"
                        TextColor="White"
                        VerticalOptions="CenterAndExpand"

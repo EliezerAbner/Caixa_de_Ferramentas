@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AppSupervisor.Model;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.Xaml;
 
 namespace AppSupervisor.Views
@@ -12,6 +13,8 @@ namespace AppSupervisor.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class PageLogin : ContentPage
 	{
+        private string email;
+
 		public PageLogin ()
 		{
 			InitializeComponent ();
@@ -36,6 +39,9 @@ namespace AppSupervisor.Views
             }
             else
             {
+                //email = txtEmail.Text;
+                email = "marcos@teste.com";
+
                 try
                 {
                     Supervisor supervisor = new Supervisor()
@@ -49,7 +55,7 @@ namespace AppSupervisor.Views
                     if (true) //autorizado
                     {
                         var pagAnterior = Navigation.NavigationStack.LastOrDefault();
-                        Navigation.PushAsync(new PageMeusFuncionarios());
+                        Navigation.PushAsync(new PageMeusFuncionarios(email));
                         Navigation.RemovePage(pagAnterior);
                     }
                     else

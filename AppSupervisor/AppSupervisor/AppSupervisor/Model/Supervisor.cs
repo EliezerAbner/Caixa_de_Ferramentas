@@ -34,7 +34,7 @@ namespace AppSupervisor.Model
             }
         }
 
-        public bool FazerLogin(Supervisor supervisor)
+        public bool FazerLogin()
         {
             string sql = "";
             bool loginAutorizado;
@@ -51,10 +51,9 @@ namespace AppSupervisor.Model
             return loginAutorizado;
         }
 
-        public Supervisor buscarNome(string email)
+        public Supervisor BuscarNome(string email)
         {
-            Supervisor supervisor = new Supervisor();
-            string sql = "SELECT nomeSupervisor FROM supervisor WHERE email="+email+"";
+            string sql = $"SELECT * FROM supervisor WHERE email='{email}'";
 
             using (MySqlConnection con = new MySqlConnection(conn))
             {
@@ -65,14 +64,14 @@ namespace AppSupervisor.Model
                     {
                         while (reader.Read())
                         {
-                            supervisor.SupervisorId = reader.GetInt32(0);
-                            supervisor.Nome = reader.GetString("nomeSupervisor");
+                            this.SupervisorId = reader.GetInt32(0);
+                            this.Nome = reader.GetString(1);
                         }
                     }
                 }
                 con.Close();
             }
-            return supervisor;
+            return this;
         }
     }
 }
