@@ -5,9 +5,8 @@ using System.Text;
 
 namespace AppSupervisor.Model
 {
-    class Setor
-    {
-        private static string conn = @"server=sql.freedb.tech;port=3306;database=freedb_ferramentasdb;user id=freedb_mobileUser;password=8XJ@vc4g@VW6&pY;charset=utf8";
+    class Setor : Conexao
+    { 
         public int SetorId { get; set; }
         public string NomeSetor { get; set; }
 

@@ -7,6 +7,7 @@ public class MonoPackageManager_Resources {
 		"FastAndroidCamera.dll",
 		"FormsViewGroup.dll",
 		"MySqlConnector.dll",
+		"Newtonsoft.Json.dll",
 		"Rg.Plugins.Popup.dll",
 		"System.Diagnostics.DiagnosticSource.dll",
 		"Xamarin.Android.Support.Annotations.dll",

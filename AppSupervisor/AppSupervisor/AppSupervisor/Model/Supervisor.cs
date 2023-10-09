@@ -6,9 +6,8 @@ using System.Text;
 
 namespace AppSupervisor.Model
 {
-    class Supervisor
+    class Supervisor : Conexao
     {
-        private static string conn = @"server=sql.freedb.tech;port=3306;database=freedb_ferramentasdb;user id=freedb_mobileUser;password=8XJ@vc4g@VW6&pY;charset=utf8";
         private string senha;
         public int SupervisorId { get; set; }
         public string Nome { get; set; }
@@ -52,9 +51,9 @@ namespace AppSupervisor.Model
             return loginAutorizado;
         }
 
-        public string buscarNome(string email)
+        public Supervisor buscarNome(string email)
         {
-            string nome = "";
+            Supervisor supervisor = new Supervisor();
             string sql = "SELECT nomeSupervisor FROM supervisor WHERE email="+email+"";
 
             using (MySqlConnection con = new MySqlConnection(conn))
@@ -62,11 +61,18 @@ namespace AppSupervisor.Model
                 con.Open();
                 using (MySqlCommand cmd = new MySqlCommand(sql, con))
                 {
-                    nome = Convert.ToString(cmd.ExecuteScalar());
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            supervisor.SupervisorId = reader.GetInt32(0);
+                            supervisor.Nome = reader.GetString("nomeSupervisor");
+                        }
+                    }
                 }
                 con.Close();
             }
-            return nome;
+            return supervisor;
         }
     }
 }

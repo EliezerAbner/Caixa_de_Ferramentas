@@ -31,6 +31,19 @@
           }
         }
       },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Rg.Plugins.Popup/2.1.0": {
         "type": "package",
         "dependencies": {
@@ -2057,6 +2070,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "MySqlConnector": "2.2.7",
+          "Newtonsoft.Json": "13.0.3",
           "Rg.Plugins.Popup": "2.1.0",
           "Xamarin.Essentials": "1.7.0",
           "Xamarin.Forms": "5.0.0.2578",
@@ -2115,6 +2129,36 @@
         "logo.png",
         "mysqlconnector.2.2.7.nupkg.sha512",
         "mysqlconnector.nuspec"
+      ]
+    },
+    "Newtonsoft.Json/13.0.3": {
+      "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/net6.0/Newtonsoft.Json.dll",
+        "lib/net6.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
       ]
     },
     "Rg.Plugins.Popup/2.1.0": {
@@ -4116,6 +4160,7 @@
     "MonoAndroid,Version=v13.0": [
       "AppSupervisor >= 1.0.0",
       "MySqlConnector >= 2.2.7",
+      "Newtonsoft.Json >= 13.0.3",
       "Rg.Plugins.Popup >= 2.1.0",
       "Xamarin.Essentials >= 1.7.0",
       "Xamarin.Forms >= 5.0.0.2578",
@@ -4125,24 +4170,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Aluno\\.nuget\\packages\\": {},
+    "C:\\Users\\eliez\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Aluno\\source\\repos\\Caixa_de_Ferramentas\\AppSupervisor\\AppSupervisor\\AppSupervisor.Android\\AppSupervisor.Android.csproj",
+      "projectUniqueName": "C:\\Programas\\Caixa_de_Ferramentas\\AppSupervisor\\AppSupervisor\\AppSupervisor.Android\\AppSupervisor.Android.csproj",
       "projectName": "AppSupervisor.Android",
-      "projectPath": "C:\\Users\\Aluno\\source\\repos\\Caixa_de_Ferramentas\\AppSupervisor\\AppSupervisor\\AppSupervisor.Android\\AppSupervisor.Android.csproj",
-      "packagesPath": "C:\\Users\\Aluno\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Aluno\\source\\repos\\Caixa_de_Ferramentas\\AppSupervisor\\AppSupervisor\\AppSupervisor.Android\\obj\\",
+      "projectPath": "C:\\Programas\\Caixa_de_Ferramentas\\AppSupervisor\\AppSupervisor\\AppSupervisor.Android\\AppSupervisor.Android.csproj",
+      "packagesPath": "C:\\Users\\eliez\\.nuget\\packages\\",
+      "outputPath": "C:\\Programas\\Caixa_de_Ferramentas\\AppSupervisor\\AppSupervisor\\AppSupervisor.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Aluno\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\eliez\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4156,8 +4201,8 @@
       "frameworks": {
         "monoandroid13.0": {
           "projectReferences": {
-            "C:\\Users\\Aluno\\source\\repos\\Caixa_de_Ferramentas\\AppSupervisor\\AppSupervisor\\AppSupervisor\\AppSupervisor.csproj": {
-              "projectPath": "C:\\Users\\Aluno\\source\\repos\\Caixa_de_Ferramentas\\AppSupervisor\\AppSupervisor\\AppSupervisor\\AppSupervisor.csproj"
+            "C:\\Programas\\Caixa_de_Ferramentas\\AppSupervisor\\AppSupervisor\\AppSupervisor\\AppSupervisor.csproj": {
+              "projectPath": "C:\\Programas\\Caixa_de_Ferramentas\\AppSupervisor\\AppSupervisor\\AppSupervisor\\AppSupervisor.csproj"
             }
           }
         }
@@ -4169,6 +4214,10 @@
           "MySqlConnector": {
             "target": "Package",
             "version": "[2.2.7, )"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.3, )"
           },
           "Rg.Plugins.Popup": {
             "target": "Package",

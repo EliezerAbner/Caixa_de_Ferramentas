@@ -1,0 +1,3 @@
+{
+    "conn":"server={your server};port=3306;database={your database};user id={your user};password={your password};charset=utf8"
+  }
