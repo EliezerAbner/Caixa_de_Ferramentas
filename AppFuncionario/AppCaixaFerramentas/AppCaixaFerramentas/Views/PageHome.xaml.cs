@@ -79,5 +79,10 @@ namespace AppCaixaFerramentas.Views
 			Verificacao janela = new Verificacao();
 			return janela.JanelaVerificacoes();
 		}
-	}
+
+        private void btnMensagens_Clicked(object sender, EventArgs e)
+        {
+			Navigation.PushAsync(new PageManutencao());	
+        }
+    }
 }

@@ -1940,11 +1940,12 @@ int drawable plus48_icon 0x7f070098
 int drawable plus_icon 0x7f070099
 int drawable power_icon 0x7f07009a
 int drawable preference_list_divider_material 0x7f07009b
-int drawable test_custom_background 0x7f07009c
-int drawable toolbox_icon 0x7f07009d
-int drawable tooltip_frame_dark 0x7f07009e
-int drawable tooltip_frame_light 0x7f07009f
-int drawable x_icon 0x7f0700a0
+int drawable settings 0x7f07009c
+int drawable test_custom_background 0x7f07009d
+int drawable toolbox_icon 0x7f07009e
+int drawable tooltip_frame_dark 0x7f07009f
+int drawable tooltip_frame_light 0x7f0700a0
+int drawable x_icon 0x7f0700a1
 int id ALT 0x7f080000
 int id BOTTOM_END 0x7f080001
 int id BOTTOM_START 0x7f080002

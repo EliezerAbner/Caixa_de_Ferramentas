@@ -36,11 +36,11 @@ namespace AppSupervisor.Model
 
                 using (MySqlConnection con = new MySqlConnection(conn))
                 {
-                    string sql = $"SELECT funcionario.nomeFuncionario " +
-                         $"(SELECT COUNT(ferramenta.ferramentaId) WHERE caixaFerramentasId={caixaId}), " +
-                         $"(SELECT COUNT(verificacao.verificacaoId) FROM verificacao WHERE funcionarioId={funcionario.Id} AND dataVerificacao>='{dataInicial}' AND dataVerificacao<='{dataFinal}')" +
-                         $"FROM funcionario,verificacao,ferramenta" +
-                         $"WHERE funcionarioId={funcionario.Id}";
+                    string sql = "SELECT f.nomeFuncionario, " +
+                                 "(SELECT COUNT(ft.ferramentaId) FROM ferramenta ft WHERE ft.caixaFerramentasId IN(SELECT cf.caixaFerramentasId FROM caixaFerramentas cf WHERE cf.funcionarioId = f.funcionarioId)) AS FerramentaCount, " +
+                                 "(SELECT COUNT(verificacao.verificacaoId) FROM verificacao WHERE verificacao.funcionarioId = f.funcionarioId AND verificacao.dataVerificacao >= '2023-10-09 00:00:00' AND verificacao.dataVerificacao <= '2023-10-13 17:00:00') AS VerificacaoCount " +
+                                 "FROM funcionario f " +
+                                 "WHERE f.funcionarioId = 3";
 
                     con.Open();
                     using (MySqlCommand cmd = new MySqlCommand(sql, con))

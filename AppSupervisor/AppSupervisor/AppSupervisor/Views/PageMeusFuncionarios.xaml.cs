@@ -43,7 +43,8 @@ namespace AppSupervisor.Views
 
         private void btnChecarVerificacoes_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new PageVerificacoes(idSupervisor));
+            //Navigation.PushAsync(new PageVerificacoes(idSupervisor));
+            Navigation.PushAsync(new PageManutencao());
         }
 
         private void btnAgendar_Clicked(object sender, EventArgs e)
@@ -53,7 +54,8 @@ namespace AppSupervisor.Views
 
         private void btnNovoAnuncio_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new PageMensagens());
+            //Navigation.PushAsync(new PageMensagens());
+            Navigation.PushAsync(new PageManutencao());
         }
 
         private async void btnLogout_Clicked(object sender, EventArgs e)

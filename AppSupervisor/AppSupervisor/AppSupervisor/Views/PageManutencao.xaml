@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppSupervisor.Views.PageManutencao"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Background>
+        <LinearGradientBrush>
+            <GradientStop Color="#1713C0"
+                  Offset="0.1" />
+            <GradientStop Color="#5BBDFA"
+                  Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Image Source="settings"
+                   HeightRequest="250"/>
+
+            <Label Text="Lamentamos"
+                   TextColor="White"
+                   FontSize="23"
+                   HorizontalTextAlignment="Center"
+                   Margin="0,20"/>
+
+            <Label Text="Este serviço está temporariamente indisponível"
+                   TextColor="White"
+                   FontSize="15"
+                   HorizontalTextAlignment="Center"
+                   FontAttributes="Italic"/>
+
+            <Button Text="Voltar"
+                    x:Name="btnVoltar"
+                    Clicked="btnVoltar_Clicked"
+                    TextColor="Black"
+                    HorizontalOptions="CenterAndExpand"
+                    Margin="0,20"
+                    CornerRadius="30"
+                    BackgroundColor="orange"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -46,7 +46,7 @@
                                    HeightRequest="50"
                                    WidthRequest="50"/>
 
-                            <Label Text="Não se esqueça! Verificação marcada para hoje"
+                            <Label Text="Não se esqueça! Janela de verificações aberta."
                                    TextColor="Black"
                                    FontSize="17"
                                    VerticalTextAlignment="Center"/>
@@ -69,6 +69,7 @@
                                     
                                     <AbsoluteLayout>
                                         <Frame x:Name="frameMsg"
+                                               IsVisible="false"
                                                BackgroundColor="#1713C0" 
                                                CornerRadius="40"
                                                AbsoluteLayout.LayoutBounds="1,0,30,30"
@@ -77,6 +78,7 @@
                                         </Frame>
 
                                         <Button x:Name="btnMensagens"
+                                                Clicked="btnMensagens_Clicked"
                                                 BackgroundColor="Transparent"
                                                 HorizontalOptions="Fill"
                                                 ImageSource="announcement_icon"
