@@ -46,17 +46,24 @@ namespace AppCaixaFerramentas.Views
                     Email = txtEmail.Text
                 };
 
-                //bool autorizar = funcionario.Login(funcionario);
+                try
+                {
+                    bool autorizar = funcionario.Login();
 
-                if (true) //autorizar
-                {
-                    var pagAnterior = Navigation.NavigationStack.LastOrDefault();
-                    Navigation.PushAsync(new PageHome(email));
-                    Navigation.RemovePage(pagAnterior);
+                    if (autorizar) //autorizar
+                    {
+                        var pagAnterior = Navigation.NavigationStack.LastOrDefault();
+                        Navigation.PushAsync(new PageHome(email));
+                        Navigation.RemovePage(pagAnterior);
+                    }
+                    else
+                    {
+                        DisplayAlert("Login", "Erro ao logar. Insira novamente as informações", "OK");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    DisplayAlert("Login", "Erro ao logar. Insira novamente as informações", "OK");
+                    DisplayAlert("Erro", $"Não estamos conseguindo fazer seu login no momento. Erro {ex.Message}", "OK");
                 }   
             }  
         }

@@ -39,25 +39,42 @@ namespace AppCaixaFerramentas.Models
 
         public bool Login()
         {
-            try
+            int funcionarioId, loginId;
+
+            using (MySqlConnection con = new MySqlConnection(conn))
             {
-                bool loginAutorizado = false;
+                string sql = $"SELECT funcionarioId FROM funcionario WHERE email='{this.Email}'";
+
+                con.Open();
+                using (MySqlCommand cmd = new MySqlCommand(sql, con))
+                {
+                    funcionarioId = (int)cmd.ExecuteScalar();
+                }
+                con.Close();
+            }
+
+            if (funcionarioId != 0)
+            {
                 using (MySqlConnection con = new MySqlConnection(conn))
                 {
-                    string sql = "";
-
+                    string sql = $"SELECT loginFuncionarioId FROM loginFuncionario WHERE senha='{this.Senha}' AND funcionarioId={funcionarioId}";
                     con.Open();
                     using (MySqlCommand cmd = new MySqlCommand(sql, con))
                     {
-                        loginAutorizado = Convert.ToBoolean(cmd.ExecuteScalar());
+                        loginId = (int)cmd.ExecuteScalar();
                     }
                     con.Close();
                 }
-                return loginAutorizado;
+
+                if (loginId != 0)
+                {
+                    return true;
+                }
+                else { return false; }
             }
-            catch (Exception ex)
+            else
             {
-                throw new Exception (ex.Message);
+                return false;
             }
         }
 
