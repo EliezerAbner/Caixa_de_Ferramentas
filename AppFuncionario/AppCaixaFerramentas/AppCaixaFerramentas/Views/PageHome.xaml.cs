@@ -12,8 +12,10 @@ namespace AppCaixaFerramentas.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PageHome : ContentPage
     {
-		private int funcionarioId = 4;
-        public PageHome(string emailObtido)
+		private int funcionarioId;
+		private bool janAberta;
+
+		public PageHome(string emailObtido)
         {
             InitializeComponent();
 
@@ -23,7 +25,8 @@ namespace AppCaixaFerramentas.Views
 			funcionarioId = funcionario.Id;
 			lblNome.Text = $"{lblNome.Text} {funcionario.NomeFuncionario}";
 
-			Mensagem msgDoDia = new Mensagem();
+			janAberta = JanelaVerificacoes();
+			frameVerificacao.IsVisible = janAberta;
 
 			//frameMsg;
 			//layoutVerificacao;
@@ -36,7 +39,15 @@ namespace AppCaixaFerramentas.Views
 
 		private void btnVerificacao_Clicked(object sender, EventArgs e)
 		{
-			Navigation.PushAsync(new PageVerificacao(funcionarioId));
+			if (janAberta)
+			{
+				Navigation.PushAsync(new PageVerificacao(funcionarioId));
+			}
+			else
+			{
+				DisplayAlert("Janela Fechada", "Não existem janelas de verificação abertas nesse momento.", "OK");
+			}
+			
         }
 
 		private void btnSair_Clicked(object sender, EventArgs e)
@@ -61,6 +72,12 @@ namespace AppCaixaFerramentas.Views
 				await Navigation.PushAsync(new PageLogin());
 				Navigation.RemovePage(pagAnterior);
 			}
+		}
+
+		private bool JanelaVerificacoes()
+		{
+			Verificacao janela = new Verificacao();
+			return janela.JanelaVerificacoes();
 		}
 	}
 }

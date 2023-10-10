@@ -13,15 +13,23 @@ namespace AppSupervisor.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class PageVerificacoes : ContentPage
 	{
-		private int idSupervisor;
+		private int supervisorId;
 		public PageVerificacoes (int idObtido)
 		{
 			InitializeComponent ();
 
-			idSupervisor = idObtido;
-
 			Agendamento agendamento = new Agendamento ();
 			pickerAgendamentos.ItemsSource = agendamento.ListaAgendamentos(idObtido);
+
+			supervisorId = idObtido;
         }
-	}
+
+        private void pickerAgendamentos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+			Agendamento ag = pickerAgendamentos.SelectedItem as Agendamento;
+
+            Verificacao verificacao = new Verificacao();
+            lvVerificacoes.ItemsSource = verificacao.listaVerificacoes(supervisorId, ag.DataInicial, ag.DataFinal);
+        }
+    }
 }

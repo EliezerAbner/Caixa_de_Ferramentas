@@ -8,11 +8,21 @@ namespace AppSupervisor.Model
 {
     class Agendamento : Conexao
     {
+        private string dataInicial;
+        private string dataFinal;
         public int AgendamentoId { get; set; }
         public int SupervisorId { get; set; }
         public int Periodo { get; set; }
-        public string DataInicial { get; set; }
-        public string DataFinal { get; set; }
+        public string DataInicial 
+        { 
+            get { return dataInicial; }
+            set { dataInicial = ConversorDatas(value); }
+        }
+        public string DataFinal
+        {
+            get { return dataFinal; }
+            set { dataFinal = ConversorDatas(value); }
+        }
 
         public List<Agendamento> ListaAgendamentos(int idSupervisor)
         {
@@ -55,6 +65,14 @@ namespace AppSupervisor.Model
                 }
                 con.Close();
             }
+        }
+
+        private string ConversorDatas(string valorAntigo)
+        {
+            DateTime va = Convert.ToDateTime(valorAntigo);
+            string valorConvertido = va.ToString("yyyy-MM-dd HH:mm:ss");
+
+            return valorConvertido;
         }
     }
 }

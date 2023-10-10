@@ -35,12 +35,12 @@
                                VerticalOptions="EndAndExpand">
                 <StackLayout Margin="10">
                     
-                    <Frame Margin="10,30,10,10"
+                    <Frame x:Name="frameVerificacao" 
+                           Margin="10,30,10,10"
                            CornerRadius="40"
                            BackgroundColor="White">
                         
-                        <StackLayout Orientation="Horizontal"
-                                     x:Name="layoutVerificacao">
+                        <StackLayout Orientation="Horizontal">
                             
                             <Image Source="caution_img"
                                    HeightRequest="50"

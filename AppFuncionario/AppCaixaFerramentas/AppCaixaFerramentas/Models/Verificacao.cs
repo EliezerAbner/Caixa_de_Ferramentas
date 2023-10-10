@@ -24,5 +24,32 @@ namespace AppCaixaFerramentas.Models
                 con.Close();
             }
         }
+
+        public bool JanelaVerificacoes()
+        {
+			string result = "";
+			using (MySqlConnection con = new MySqlConnection(conn))
+            {
+                string dataAtual = DataAtual();
+                string sql = $"SELECT agendamentoId FROM agendamento WHERE dataInicial <= '{dataAtual}' AND dataFinal >= '{dataAtual}'";
+
+                con.Open();
+                using (MySqlCommand cmd = new MySqlCommand(sql, con))
+                {
+                    result = Convert.ToString(cmd.ExecuteScalar());
+                }
+                con.Close();
+            }
+
+            if (result != "") { return true; }
+            else { return false; }
+        }
+
+        private string DataAtual()
+        {
+            string dataAtual = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
+            return dataAtual;
+        }
     }
 }

@@ -12,6 +12,8 @@ namespace AppCaixaFerramentas.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PageLogin : ContentPage
     {
+        private string email;
+
         public PageLogin()
         {
             InitializeComponent();
@@ -19,6 +21,8 @@ namespace AppCaixaFerramentas.Views
 
         private void btnLogin_Clicked(object sender, EventArgs e)
         {
+            email = txtEmail.Text;
+
             if (txtEmail.Text == null)
             {
                 DisplayAlert("Erro", "Email não preenchido", "OK");
@@ -47,7 +51,7 @@ namespace AppCaixaFerramentas.Views
                 if (true) //autorizar
                 {
                     var pagAnterior = Navigation.NavigationStack.LastOrDefault();
-                    Navigation.PushAsync(new PageHome("p@teste.com"));
+                    Navigation.PushAsync(new PageHome(email));
                     Navigation.RemovePage(pagAnterior);
                 }
                 else

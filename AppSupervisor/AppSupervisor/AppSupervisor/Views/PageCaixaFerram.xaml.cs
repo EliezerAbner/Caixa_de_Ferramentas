@@ -60,6 +60,8 @@ namespace AppSupervisor.Views
                         caixaFerramentaId = caixa.CadastrarCaixa(funcionarioId, codigoCaixa);
                         btnAdd.IsEnabled = true;
                         imgOk.IsVisible=true;
+
+                        MessagingCenter.Unsubscribe<PageScanner, string>(this, "ShowError");
                     }
                     catch (Exception ex)
                     {

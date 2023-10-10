@@ -35,7 +35,8 @@
                     <yummy:PancakeView Border="{yummy:BorderMarkup Color=#000000, Thickness='1'}">
                         <Picker ItemDisplayBinding="{Binding AgendamentoId, StringFormat='Agendamento {0}'}"
                                 x:Name="pickerAgendamentos"
-                                TextColor="Black"/>
+                                TextColor="Black"
+                                SelectedIndexChanged="pickerAgendamentos_SelectedIndexChanged"/>
                     </yummy:PancakeView>
 
                     <Grid Margin="5,20">
@@ -58,8 +59,38 @@
                                TextColor="Black"/>
                     </Grid>
 
-                    <ListView Margin="0,20">
-                        
+                    <ListView x:Name="lvVerificacoes" Margin="0,20">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="160"/>
+                                            <ColumnDefinition Width="80"/>
+                                            <ColumnDefinition Width="80"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label Grid.Column="0"
+                                               Text="{Binding NomeFuncionario}"               
+                                               TextColor= "Black"
+                                               VerticalTextAlignment="Center"
+                                               FontSize="23"/>
+
+                                        <Label Grid.Column="1"
+                                               Text="{Binding NumFerramentas}"
+                                               TextColor="Black"
+                                               VerticalTextAlignment="Center"
+                                               FontSize="18"/>
+
+                                        <Label Grid.Column="2"
+                                               Text="{Binding FerramVerificadas}"
+                                               TextColor="Black"
+                                               VerticalTextAlignment="Center"
+                                               FontSize="18"/>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
                     </ListView>
                 </StackLayout>
             </yummy:PancakeView>
