@@ -1,0 +1,1 @@
+SELECT funcionario.nomeFuncionario, (SELECT COUNT(ferramenta.ferramentaId) FROM ferramenta WHERE caixaFerramentasId=11), (SELECT COUNT(verificacao.verificacaoId) FROM verificacao WHERE funcionarioId=3 AND dataVerificacao>='2023-10-09 00:00:00' AND dataVerificacao<='2023-10-13 17:00:00') FROM funcionario,verificacao,ferramenta WHERE funcionario.funcionarioId=3; 
