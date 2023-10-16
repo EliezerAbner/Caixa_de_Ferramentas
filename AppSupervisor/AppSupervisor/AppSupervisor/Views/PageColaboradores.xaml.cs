@@ -57,7 +57,12 @@ namespace AppSupervisor.Views
             }
         }
 
-        private void txtSenhaNov_TextChanged(object sender, TextChangedEventArgs e)
+		private void txtSenha_TextChanged(object sender, TextChangedEventArgs e)
+		{
+           
+		}
+
+		private void txtSenhaNov_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (txtSenha.Text != txtSenhaNov.Text)
             {
@@ -109,8 +114,8 @@ namespace AppSupervisor.Views
                     {
                         Funcionario novoFuncionario = new Funcionario()
                         {
-                            SupervisorId = 2, //pro futuro
-                            NomeFuncionario = txtNome.Text,
+                            SupervisorId = idSupervisor,
+							NomeFuncionario = txtNome.Text,
                             Email = txtEmail.Text,
                             SetorId = pickerSetores.SelectedIndex,
                             Cargo = txtCargo.Text,
@@ -158,6 +163,6 @@ namespace AppSupervisor.Views
             btnCadastar.Text = "Editar";
         }
 
-        
-    }
+		
+	}
 }

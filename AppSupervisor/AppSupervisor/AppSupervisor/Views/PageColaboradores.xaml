@@ -87,7 +87,7 @@
                             <yummy:PancakeView BackgroundColor="Transparent"
                                                Border="{yummy:BorderMarkup Color=#000000, Thickness='1'}" >
 
-                                <Entry x:Name="txtSenha" IsPassword="True" Keyboard="Default" TextColor="Black" ReturnType="Next"/>
+                                <Entry x:Name="txtSenha" TextChanged="txtSenha_TextChanged" IsPassword="True" Keyboard="Default" TextColor="Black" ReturnType="Next"/>
                             </yummy:PancakeView>
                         </StackLayout>
 

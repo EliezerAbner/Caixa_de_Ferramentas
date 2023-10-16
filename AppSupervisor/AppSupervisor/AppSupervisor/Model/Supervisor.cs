@@ -30,26 +30,51 @@ namespace AppSupervisor.Model
                 {
                     builder.Append(bytes[i].ToString("x2"));
                 }
-                return builder.ToString();
+                string teste = builder.ToString();
+                return teste;
             }
         }
 
         public bool FazerLogin()
         {
-            string sql = "";
-            bool loginAutorizado;
+			string supervisorId, loginId;
 
-            using(MySqlConnection con = new MySqlConnection(conn))
-            {
-                con.Open();
-                using (MySqlCommand cmd = new MySqlCommand(sql,con))
-                {
-                    loginAutorizado = Convert.ToBoolean(cmd.ExecuteScalar());
-                }
-                con.Close();
-            }
-            return loginAutorizado;
-        }
+			using (MySqlConnection con = new MySqlConnection(conn))
+			{
+				string sql = $"SELECT supervisorId FROM supervisor WHERE email='{this.Email}'";
+
+				con.Open();
+				using (MySqlCommand cmd = new MySqlCommand(sql, con))
+				{
+					supervisorId = Convert.ToString(cmd.ExecuteScalar());
+				}
+				con.Close();
+			}
+
+			if (supervisorId != "")
+			{
+				using (MySqlConnection con = new MySqlConnection(conn))
+				{
+					string sql = $"SELECT loginSupervisorId FROM loginSupervisor WHERE senha='{this.Senha}' AND supervisorId={supervisorId}";
+					con.Open();
+					using (MySqlCommand cmd = new MySqlCommand(sql, con))
+					{
+						loginId = Convert.ToString(cmd.ExecuteScalar());
+					}
+					con.Close();
+				}
+
+				if (loginId != "")
+				{
+					return true;
+				}
+				else { return false; }
+			}
+			else
+			{
+				return false;
+			}
+		}
 
         public Supervisor BuscarNome(string email)
         {

@@ -54,7 +54,7 @@ namespace AppSupervisor.Views
 
         private void btnNovoAnuncio_Clicked(object sender, EventArgs e)
         {
-            //Navigation.PushAsync(new PageMensagens());
+            //Navigation.PushAsync(new PageMensagens(idSupervisor));
             Navigation.PushAsync(new PageManutencao());
         }
 

@@ -39,9 +39,7 @@ namespace AppSupervisor.Views
             }
             else
             {
-                //email = txtEmail.Text;
-                email = "marcos@teste.com";
-
+                email = txtEmail.Text;
                 try
                 {
                     Supervisor supervisor = new Supervisor()
@@ -50,9 +48,9 @@ namespace AppSupervisor.Views
                         Senha = txtSenha.Text
                     };
 
-                    //bool autorizado = supervisor.FazerLogin(supervisor);
+                    bool autorizado = supervisor.FazerLogin();
 
-                    if (true) //autorizado
+                    if (autorizado)
                     {
                         var pagAnterior = Navigation.NavigationStack.LastOrDefault();
                         Navigation.PushAsync(new PageMeusFuncionarios(email));
@@ -65,7 +63,7 @@ namespace AppSupervisor.Views
                 }
                 catch (Exception ex)
                 {
-                    DisplayAlert("Erro", ""+ex.Message+"", "OK");
+                    DisplayAlert("Erro", $"Infelizmente, não estamos conseguindo te logar no momento. Erro: {ex.Message}", "OK");
                 }
             }
 

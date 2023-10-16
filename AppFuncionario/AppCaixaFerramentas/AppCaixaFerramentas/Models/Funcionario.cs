@@ -39,7 +39,7 @@ namespace AppCaixaFerramentas.Models
 
         public bool Login()
         {
-            int funcionarioId, loginId;
+            string funcionarioId, loginId;
 
             using (MySqlConnection con = new MySqlConnection(conn))
             {
@@ -48,12 +48,12 @@ namespace AppCaixaFerramentas.Models
                 con.Open();
                 using (MySqlCommand cmd = new MySqlCommand(sql, con))
                 {
-                    funcionarioId = (int)cmd.ExecuteScalar();
+                    funcionarioId = Convert.ToString(cmd.ExecuteScalar());
                 }
                 con.Close();
             }
 
-            if (funcionarioId != 0)
+            if (funcionarioId != "")
             {
                 using (MySqlConnection con = new MySqlConnection(conn))
                 {
@@ -61,12 +61,12 @@ namespace AppCaixaFerramentas.Models
                     con.Open();
                     using (MySqlCommand cmd = new MySqlCommand(sql, con))
                     {
-                        loginId = (int)cmd.ExecuteScalar();
+                        loginId = Convert.ToString(cmd.ExecuteScalar());
                     }
                     con.Close();
                 }
 
-                if (loginId != 0)
+                if (loginId != "")
                 {
                     return true;
                 }

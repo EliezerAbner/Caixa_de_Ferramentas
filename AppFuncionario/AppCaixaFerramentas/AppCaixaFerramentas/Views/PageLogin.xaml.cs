@@ -58,7 +58,7 @@ namespace AppCaixaFerramentas.Views
                     }
                     else
                     {
-                        DisplayAlert("Login", "Erro ao logar. Insira novamente as informações", "OK");
+                        DisplayAlert("Erro de Login", "Não foi possivel logar. Confira as informações e tente novamente", "OK");
                     }
                 }
                 catch (Exception ex)
